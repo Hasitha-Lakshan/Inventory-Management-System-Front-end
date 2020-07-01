@@ -29,7 +29,7 @@ This application is created for the front-end of a web-based Inventory Managemen
     ```
 
 ## Built With
-* Angular 9.1.11
+* Angular
 * HTML
 * CSS
 * JavaScript
