@@ -10,7 +10,7 @@ This application is created for the front-end of a web-based Inventory Managemen
 ### Installing
 1. Clone the respository:
     ```
-   git clone git@github.com:Hasitha-Lakshan/Inventory-Management-System-Front-end.git
+   git clone https://github.com/Hasitha-Lakshan/Inventory-Management-System-Front-end.git
     ```
 
 2. Install packages:
