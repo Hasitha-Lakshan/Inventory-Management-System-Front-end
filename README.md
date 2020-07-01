@@ -13,11 +13,16 @@ This application is created for the front-end of a web-based Inventory Managemen
    git clone https://github.com/Hasitha-Lakshan/Inventory-Management-System-Front-end.git
     ```
 
-2. Install node package manager:
+2. Install packages:
+   * Node package manager:
    ```
    npm install
    ```
-   Note: Access to the "app" folder before installing the npm.
+   * Bootstrap:
+   ```
+   npm i bootstrap
+   ```
+   Note: Access to the "app" folder before installing the packages.
 3. Run the server:
    ```
    ng serve
