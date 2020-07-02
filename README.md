@@ -22,7 +22,7 @@ This application is created for the front-end of a web-based Inventory Managemen
    ```
    npm i bootstrap
    ```
-   Note: Access to the "app" folder before installing the packages.
+   Note: Access to the "V1" folder using cmd before installing the packages. After a complete installation import Bootstrap to the CSS file using  `@import '~bootstrap/dist/css/bootstrap.min.css';`
 3. Run the server:
    ```
    ng serve
