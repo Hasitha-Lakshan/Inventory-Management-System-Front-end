@@ -22,9 +22,9 @@ This application is created for the front-end of a web-based Inventory Managemen
    ```
    npm i --save bootstrap
    ```
-   * Add Bootstrap to angular.json:
+   * Add Bootstrap into the styles of angular.json file:
    ```
-   "styles": ["./node_modules/bootstrap/dist/css/bootstrap.min.css"]
+   "./node_modules/bootstrap/dist/css/bootstrap.min.css"
    ```
    Note: Access to the "V1" folder using cmd before installing the packages.
 3. Run the server:
