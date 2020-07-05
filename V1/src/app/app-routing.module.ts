@@ -1,8 +1,19 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {UsersComponent} from './admin-dashboard/users/users.component';
+import{NewuserComponent} from './admin-dashboard/newuser/newuser.component';
+const routes: Routes = [
+  {
+    path:'newuser',
+    component:NewuserComponent
 
-
-const routes: Routes = [];
+  },
+  {
+    path:'users',
+    component:UsersComponent
+  }
+ 
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

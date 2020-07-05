@@ -12,4 +12,13 @@
     border: 1px solid white;
     color: whitesmoke;
 }
+.customnavlink{
+ color: white;
+}
+a{
+    color: white;
+}
+#adminbutton{
+    border: none;
+}
 
