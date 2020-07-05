@@ -26,6 +26,15 @@ This application is created for the front-end of a web-based Inventory Managemen
    ```
    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
    ```
+   * Installing jQuery:
+   ```
+   npm install jquery --save
+   ```
+   * Add jQuery and JS into the scripts of angular.json file:
+   ```
+   "./node_modules/jquery/dist/jquery.min.js",
+   "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+   ```
    Note: Access to the "V1" folder using cmd before installing the packages.
 3. Run the server:
    ```
