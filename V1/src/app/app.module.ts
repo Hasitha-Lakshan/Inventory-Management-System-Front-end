@@ -1,14 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AnalyzerSelectionComponent } from './analyzer-selection/analyzer-selection.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    AnalyzerSelectionComponent
+    AnalyzerSelectionComponent,
+    NavBarComponent,
+    routingComponents
   ],
   imports: [
     BrowserModule,
