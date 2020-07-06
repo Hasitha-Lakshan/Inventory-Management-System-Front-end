@@ -1,17 +1,89 @@
-<<<<<<< HEAD
-
 <!-- saved from url=(0112)file:///D:/3rd%20Year/CS311/github/Inventory-Management-System-Front-end/V1/src/app/report/report.component.html -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body><p>This is the REPORT page</p>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252"></head><body> 
 
+<p>This is the REPORT page</p>
+===================
+<br><br><br>
 
-=======
-<p>This is REPORT page</p>
->>>>>>> b920ec0c40dfde0b76240079f12ad3abfd9ddfe7
+<!--This is the code for the navbar-->
+
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark bg-primary" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Navbar</a></mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect>Home<span class="sr-only">(current)</span></a>
+        </li>
+
+        <!-- Dropleft-->
+                <li class="nav-item dropdown" dropdown>
+                    <a dropdownToggle mdbWavesEffect type="button" class="nav-link dropdown-toggle waves-light" mdbWavesEffect>
+                      Basic dropleft<span class="caret"></span></a>
+                    <div *dropdownMenu class="dropdown-menu dropdown dropdown-primary" role="menu">
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Action</a>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Another action</a>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Something else here</a>
+                      <div class="divider dropdown-divider"></div>
+                      <a class="dropdown-item waves-light" mdbWavesEffect href="#">Separated link</a>
+                    </div>
+                  </li>
+
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>STORED ITEMS REPORT</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect>Inventory Manager</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect>Log Out</a>
+        </li>
+  
+      </ul>
+  
+
+    </links>
+  
+  </mdb-navbar>
 
 
 <!--This is the code for time period-->
 
+<p>Time Period</p>
+<mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Start date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker-toggle matSuffix [for]="picker">
+      <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+    </mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
 <br>
+<mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>End date</mat-label>
+      <input matInput [matDatepicker]="picker">
+      <mat-datepicker-toggle matSuffix [for]="picker">
+        <mat-icon matDatepickerToggleIcon>keyboard_arrow_down</mat-icon>
+      </mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+
+
+<br><br>
+
+  <!-- Search form -->
+        <form class="form-inline waves-light" mdbWavesEffect>
+            <div class="md-form my-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </div>
+          </form>
+<br><br><br>
 
 
   <!-- This is the code for the table-->
@@ -72,12 +144,11 @@
   </table>
 
 
-<<<<<<< HEAD
+
   <br><br>
 
   
-=======
->>>>>>> b920ec0c40dfde0b76240079f12ad3abfd9ddfe7
+ 
 <!-- This is the code for the last 5 input bars-->
 <!-- couldnt find better "form class='input' -->
 
@@ -115,10 +186,8 @@
         </div>
       </div>
     </div>
-<<<<<<< HEAD
+
   </form></body></html>
 
 
-=======
-  </form>
->>>>>>> b920ec0c40dfde0b76240079f12ad3abfd9ddfe7
+ 
