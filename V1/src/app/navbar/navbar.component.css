@@ -1,9 +1,16 @@
+
+.margin-left1{
+    margin-left: 100px;
+}
+
+.margin-right{
+    margin-right: -200px;
+}
+
+.margin-left2{
+    margin-left: 500px;
+}
+
 .btn{
- color:#ffffff;
-}
-.navbar-brand{
-    font-size: 1rem;;
-}
-.btn-dark{
-    border-color: white;
+    border-radius: 0 ;
 }

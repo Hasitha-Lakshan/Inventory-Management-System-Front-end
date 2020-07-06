@@ -1,0 +1,9 @@
+.th,tr,td{
+    text-align: center;
+    color: #fff;
+}
+
+.tr,td{
+    
+    background-color: violet;
+}
