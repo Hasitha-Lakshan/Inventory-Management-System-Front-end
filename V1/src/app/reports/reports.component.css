@@ -35,16 +35,17 @@
 
   /* Style the Time Period bar */
       .timebar {
-        width: 100%;
+        width: 600px;
+        height: 100px;
         background-color:rgba(1, 69, 255, 0.89);
         overflow: auto;
+        position: relative;
     }
 
    /* Time Period bar links */
 
    .timebar a {
     float: left;
-    text-align: center;
     padding: 12px;
     color: white;
     text-decoration: none;
