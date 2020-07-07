@@ -1,48 +1,80 @@
-<div class="custom-control custom-switch dropdown dropright  margin-left3">
-    <button   type="button" class="btn btn-primary dropdown-toggle btn-block " data-toggle="dropdown">
-    <input type="checkbox" class="custom-control-input" id="customSwitches">
-    <label class="custom-control-label" for="customSwitches">
-      <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
+ <div class="custom-control custom-switch dropdown dropright  margin-left3"> 
+   <div id="accordion">
+
+    <div class="card text-white bg-primary mb-1 ">
+      <div class="card-header">
+        <a class="card-link text-white " data-toggle="collapse" href="#collapseOne">
+          <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
       <b>  LORRY NUMBER 01</b>
-      </label>
-    </button>
-
-    <div class="p-3 mb-2 bg-secondary text-white">
-    <form>
-      <div class="form-row ">
-        <div class="form-group col-md-6">
-          <label for="inputFname">FIRST NAME</label>
-          <input type="text" class="form-control" id="inputFname" placeholder="First Name">
-        </div>
-        <div class="form-group col-md-6">
-          <label for="inputLname">LAST NAME</label>
-          <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+        </a>
+      </div>
+      <div id="collapseOne" class="collapse show" data-parent="#accordion">
+        <div class="card-body">
+          <div class="p-3 mb-2 bg-secondary text-white">
+            <form>
+              <div class="form-row ">
+                <div class="form-group col-md-6">
+                  <label for="inputFname">FIRST NAME</label>
+                  <input type="text" class="form-control" id="inputFname" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLname">LAST NAME</label>
+                  <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputTp">TP NUMBER</label>
+                <input type="text" class="form-control" id="inputTp" placeholder="Required Field">
+              </div>
+            </form>
+            </div> 
         </div>
       </div>
-      <div class="form-group">
-        <label for="inputTp">TP NUMBER</label>
-        <input type="text" class="form-control" id="inputTp" placeholder="Required Field">
-      </div>
-    </form>
     </div>
-
-    <button   type="button" class="btn btn-primary dropdown-toggle btn-block " data-toggle="dropdown">
-    <input type="checkbox" class="custom-control-input" id="customSwitches">
-    <label class="custom-control-label" for="customSwitches">
-      <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
-      <b>  LORRY NUMBER 02</b>
-      
-    </label>
-    </button>
-
-    <button type="button" class="btn btn-primary dropdown-toggle btn-block " data-toggle="dropdown">
-      
-      <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
-      <b>  ADD NEW LORRY</b>
-      <img src="assets/Icons/add-24px.svg" alt="add" >
-    </button>
-
-  </div> 
-
   
+    <div class="card text-white bg-primary mb-1 ">
+      <div class="card-header ">
+        <a class="collapsed card-link text-white" data-toggle="collapse" href="#collapseTwo">
+          <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
+          <b>  LORRY NUMBER 02</b>
+        </a>
+      </div>
+      <div id="collapseTwo" class="collapse" data-parent="#accordion">
+        <div class="card-body">
+          <div class="p-3 mb-2 bg-secondary text-white">
+            <form>
+              <div class="form-row ">
+                <div class="form-group col-md-6">
+                  <label for="inputFname">FIRST NAME</label>
+                  <input type="text" class="form-control" id="inputFname" placeholder="First Name">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputLname">LAST NAME</label>
+                  <input type="text" class="form-control" id="inputLname" placeholder="Last Name">
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="inputTp">TP NUMBER</label>
+                <input type="text" class="form-control" id="inputTp" placeholder="Required Field">
+              </div>
+            </form>
+            </div> 
+        </div>
+      </div>
+    </div>
+  
+    
+    <div class="card text-white bg-primary mb-1">
+      <div class="card-body">
+        <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
+    <b>  ADD NEW LORRY</b>
+    <img src="assets/Icons/add-24px.svg" alt="add" >
+      </div>
+    </div>
+  </div>
+  
+ </div>
+
+
+
  
