@@ -35,7 +35,7 @@
 
   /* Style the Time Period bar */
       .timebar {
-        width: 600px;
+        width: 800px;
         height: 100px;
         background-color:rgba(1, 69, 255, 0.89);
         overflow: auto;
@@ -47,7 +47,7 @@
    .timebar a {
     float: left;
     padding: 12px;
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-size: 17px;
   }
