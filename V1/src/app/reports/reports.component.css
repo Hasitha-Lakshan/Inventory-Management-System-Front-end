@@ -2,7 +2,7 @@
 /* Style the navigation bar */
 .navbar {
     width: 100%;
-    background-color:rgba(1, 69, 255, 0.89);
+    background-color:rgba(57, 159, 243, 0.952);
     overflow: auto; 
   }
   
@@ -18,7 +18,7 @@
   
   /* Navbar links on mouse-over */
   .navbar a:hover {
-    background-color: #000;
+    background-color: rgba(11, 97, 179, 0.671);
   }
   
   /* Current/active navbar link */
@@ -37,7 +37,7 @@
       .timebar {
         width: 800px;
         height: 100px;
-        background-color:rgba(1, 69, 255, 0.89);
+        background-color:rgba(57, 159, 243, 0.952);
         overflow: auto;
         position: relative;
     }
@@ -55,7 +55,7 @@
   /* Current active Time Period bar links */
     @media screen and (max-width: 500px) {
     .timebar a {
-      float: none;
+      float: bottom;
       display: block;
     }
   }
