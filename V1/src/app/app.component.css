@@ -1,1 +1,43 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+.button
+{
+  align-items: center;
+  padding:13px 32px;
+  align-items: center;
+}
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+}
+
+/* Navbar links */
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 25px;
+}
+
+/* Navbar links on mouse-over */
+.navbar a:hover{
+}
+
+/* Current/active navbar link */
+.active {
+}
+
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}

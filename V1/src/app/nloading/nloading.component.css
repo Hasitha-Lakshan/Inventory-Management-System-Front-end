@@ -1,0 +1,54 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+}
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
+
+.form-group-row
+{
+  margin-left: 350px;
+  margin-top: 75px;
+  border-radius: 0;
+}
+
+.col-auto
+{
+  border-radius: 0;
+}
+.btn
+{
+  border-radius: 0;
+}
+
+.input-group-text
+{
+  background-color: #007bff;
+  border-radius: 0;
+}
+
+.col-auto
+{
+  background-color: #e8e6df ;
+  background-size: 20px;
+}

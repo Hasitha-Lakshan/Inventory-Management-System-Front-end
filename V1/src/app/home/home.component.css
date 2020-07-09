@@ -1,0 +1,32 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+
+.btn{
+  width: 225px;
+  margin-left: 225px;
+  border-radius: 0;
+}
+.navbar {
+  width: 100%;
+  background-color: #555;
+  overflow: auto;
+}
+
+.navbar-nav > li{
+  padding-left:30px;
+}
+.navbar a {
+  float: left;
+  text-align: center;
+  padding: 15px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 500px) {
+  .navbar a {
+    float: none;
+    display: block;
+  }
+}
