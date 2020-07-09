@@ -1,11 +1,7 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
 
 
-.btn{
-  width: 225px;
-  margin-left: 225px;
-  border-radius: 0;
-}
+
 .navbar {
   width: 100%;
   background-color: #555;
@@ -29,4 +25,15 @@
     float: none;
     display: block;
   }
+}
+
+.btn-group
+{
+  border-radius: 0;
+  margin-left: 450px;
+}
+
+.btn
+{
+  border-radius: 0;
 }
