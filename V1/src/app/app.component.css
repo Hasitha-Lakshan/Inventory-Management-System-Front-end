@@ -1,1 +1,9 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+
+.form-control{
+    background-color: #e9ecef;
+}
+
+.placeholder{
+    color: bg-primary;
+}

@@ -1,18 +1,19 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { TablesComponent } from './tables/tables.component';
-import { ButtonsComponent } from './buttons/buttons.component';
+import { InventoryManagerSelectionsComponent } from './inventory-manager-selections/inventory-manager-selections.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    TablesComponent,
-    ButtonsComponent
+    routingComponents,
+    InventoryManagerSelectionsComponent,
+    EmployeeDetailsComponent,
+    ShopsDetailsComponent
   ],
   imports: [
     BrowserModule,
