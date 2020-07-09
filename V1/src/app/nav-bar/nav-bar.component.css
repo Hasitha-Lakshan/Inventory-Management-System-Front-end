@@ -25,6 +25,7 @@
 
 .home-icon{
     fill: #fff;
+    vertical-align: sub;
 }
 
 
@@ -49,4 +50,9 @@
     background-position:center top;
     text-align: center;
     fill: #fff;
+}
+
+.an-icon{
+    width: 18px;
+    height: 18px;
 }

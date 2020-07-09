@@ -9,7 +9,4 @@ import {AppRoutingModule} from './app-routing.module';
 export class AppComponent {
   title = 'V1';
 
-  signOut() {
-    localStorage.removeItem('currentUser');
-  }
 }
