@@ -6,7 +6,7 @@ import {NavbarComponent} from './navbar/navbar.component'
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  color = "gray"
+  
   constructor() { }
 
   ngOnInit(): void {
