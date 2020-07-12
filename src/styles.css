@@ -1,1 +1,142 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    margin: 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+
+:root{
+    /* Color variables */
+    --marine-blue: #0652DD;
+    --dark-marine-blue: #033eac;
+    --white: #ffffff;
+    --gray: #747d8c;
+    --light-gray: #ced6e0;
+}
+
+
+/* Icons */
+.store{
+    background-image: url('src/assets/store.svg');
+    background-size: cover;
+    height: 25px;
+    width: 30px;
+    fill: white;
+}
+
+.store-plus{
+    background-image: url('src/assets/store-plus.svg');
+    background-size: cover;
+    height: 25px;
+    width: 25px;
+    fill: white;
+}
+
+/* Styles */
+.btn-primary{
+    margin: 0;
+}
+
+.form-control{
+    border-radius: 0;
+}
+
+nav{
+    background: var(--marine-blue);
+    align-items: center;
+}
+
+nav a{
+    color: var(--white);
+}
+
+nav a:hover{
+    color: var(--light-gray);
+}
+
+nav a span{
+    text-decoration: none;
+    /* margin-right: 10px; */
+}
+
+.nav-btns{
+    margin-bottom: -5px;
+}
+
+.btn{
+    border-radius: 0;
+    text-transform: uppercase;
+}
+
+nav .btn:hover{
+    color: var(--marine-blue);
+}
+
+.sp-btwn{
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify-right{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.jf-r{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.pd-top{
+    padding-top: 30px;
+}
+
+.date{
+    color: var(--marine-blue);
+    background: var(--light-gray);
+}
+
+.btn-primary{
+    align-items: center;
+    background: var(--marine-blue);
+}
+
+.pd-tp-2{
+    padding: 5px;
+}
+
+.pd-0{
+    padding-right: 0;
+    padding-left: 0;
+}
+.form-cont .btn{
+    border: none;
+}
+
+.frm{
+    justify-content: space-between;
+}
+
+.form-bg{
+    background: var(--light-gray);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+span{
+    border-radius: 0;
+}
+
+.input-group-text{
+    background: var(--marine-blue);
+    color: var(--white);
+}
+
+.input-group-text, .w-150{
+    width: 150px;
+}
+
+.btn-light, .btn-light:hover{
+    color: var(--marine-blue);
+}
