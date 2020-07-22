@@ -12,7 +12,7 @@ export class SignupService {
 
   constructor(private http: HttpClient) { }
 
-  connectPostApi(userData: User): Observable<User> {
+  connectSignupApi(userData: User): Observable<User> {
     let httpHeader = new HttpHeaders().set('Content-Type', 'application/Json');
     let options = {
       headers: httpHeader

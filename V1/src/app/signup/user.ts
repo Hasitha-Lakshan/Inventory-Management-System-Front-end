@@ -7,7 +7,7 @@ export interface User {
     addressLine1: string;
     addressLine2: string;
     addressLine3: string;
-    phoneNumbers : PhoneNumber[];
+    phoneNumbers: PhoneNumber[];
     username: string;
     password: string;
 }

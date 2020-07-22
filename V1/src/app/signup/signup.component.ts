@@ -49,11 +49,10 @@ export class SignupComponent implements OnInit {
   }
 
   deletePhoneNumber(i) {
-      this.phoneNumbers.removeAt(i);
+    this.phoneNumbers.removeAt(i);
   }
 
-  clearForm()
-  {
+  clearForm() {
     this.signupForm.reset();
   }
 
@@ -61,13 +60,12 @@ export class SignupComponent implements OnInit {
 
     this.datasaved = false;
     this.user = this.signupForm.value;
-    //console.log(this.user);
     this.postData(this.user);
     this.signupForm.reset();
   }
 
   postData(newUser: User) {
-    this.signupService.connectPostApi(newUser).subscribe(c => this.datasaved = true)
+    this.signupService.connectSignupApi(newUser).subscribe(c => this.datasaved = true)
   }
 
 }
