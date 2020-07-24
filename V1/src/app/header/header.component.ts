@@ -9,7 +9,7 @@ import { AuthService } from '../services/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
-  private username: string;
+  username: string;
 
   constructor(private authService: AuthService, private localStorageService: LocalStorageService) { }
 
