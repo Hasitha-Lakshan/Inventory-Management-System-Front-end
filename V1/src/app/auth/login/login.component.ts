@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { LoginPayload } from './login-payload';
-import { LoginService } from '../services/login.service';
+import { LoginPayload } from "./login-payload";
+import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
-import { error } from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
   loginPayload: LoginPayload;
   notRegistered: boolean;
 
-  constructor(private loginService: LoginService, private formbuilder: FormBuilder, private router: Router) { }
+  constructor(private authService: AuthService, private formbuilder: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
 
@@ -36,19 +35,19 @@ export class LoginComponent implements OnInit {
 
   postData(loginPayloadData: LoginPayload) {
 
-    this.loginService.connectLoginApi(loginPayloadData).subscribe(role => {
+    this.authService.connectLoginApi(loginPayloadData).subscribe(role => {
 
       if (role == "ADMIN") {
-        this.router.navigateByUrl('test');
+        this.router.navigateByUrl('header');
       }
       else if (role == "ANALYZER") {
-        this.router.navigateByUrl('test');
+        this.router.navigateByUrl('header');
       }
       else if (role == "INVENTORY_MANAGER") {
-        this.router.navigateByUrl('test');
+        this.router.navigateByUrl('header');
       }
       else if (role == "CASH_COLLECTOR") {
-        this.router.navigateByUrl('test');
+        this.router.navigateByUrl('header');
       }}, 
       error => {
         this.notRegistered = true;

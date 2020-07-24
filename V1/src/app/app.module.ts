@@ -6,11 +6,11 @@ import { NgxWebstorageModule } from 'ngx-webstorage'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { SignupComponent } from './signup/signup.component';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { TestComponent } from './test/test.component';
 import { HttpClientInterceptor } from './http-client-interceptor';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { HttpClientInterceptor } from './http-client-interceptor';
     LoginComponent,
     SignupComponent,
     HomeComponent,
-    TestComponent
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

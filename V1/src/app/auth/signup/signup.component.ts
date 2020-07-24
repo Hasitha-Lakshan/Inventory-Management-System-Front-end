@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { SignupService } from '../services/signup.service';
+import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
-import { User } from './user';
+import { SignupPayload } from './signup-payload';
 
 @Component({
   selector: 'app-signup',
@@ -10,12 +10,12 @@ import { User } from './user';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private signupService: SignupService, private formbuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formbuilder: FormBuilder) { }
 
   title = 'User Signup Page';
 
   signupForm: FormGroup;
-  user: User;
+  signupPayload: SignupPayload;
   datasaved: boolean;
 
   ngOnInit(): void {
@@ -59,13 +59,13 @@ export class SignupComponent implements OnInit {
   submitUserData() {
 
     this.datasaved = false;
-    this.user = this.signupForm.value;
-    this.postData(this.user);
+    this.signupPayload = this.signupForm.value;
+    this.postData(this.signupPayload);
     this.signupForm.reset();
   }
 
-  postData(newUser: User) {
-    this.signupService.connectSignupApi(newUser).subscribe(c => this.datasaved = true)
+  postData(newUser: SignupPayload) {
+    this.authService.connectSignupApi(newUser).subscribe(c => this.datasaved = true)
   }
 
 }

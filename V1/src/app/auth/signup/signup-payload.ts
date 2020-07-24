@@ -1,6 +1,6 @@
 import { PhoneNumber } from './phone-number';
 
-export interface User {
+export class SignupPayload {
     firstName: string;
     lastName: string;
     role: string;
