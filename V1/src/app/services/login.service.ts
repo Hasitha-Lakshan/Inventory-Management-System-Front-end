@@ -15,7 +15,7 @@ export class LoginService {
 
   constructor(private http: HttpClient, private localStorageService: LocalStorageService) { }
 
-  connectLoginApi(loginPayloadData: LoginPayload): Observable<boolean> {
+  connectLoginApi(loginPayloadData: LoginPayload): Observable<string> {
     let httpHeader = new HttpHeaders().set('Content-Type', 'application/Json');
     let options = {
       headers: httpHeader
@@ -23,8 +23,13 @@ export class LoginService {
     return this.http.post<JwtAuthResponse>(this.host, loginPayloadData, options).pipe(map(data => {
       this.localStorageService.store('authenticationToken', data.authenticationToken);
       this.localStorageService.store('username', data.username);
+      this.localStorageService.store('role', data.role);
 
-      return true;
+      return data.role;
     }))
+  }
+
+  isAuthenticated(): Boolean {
+    return this.localStorageService.retrieve('username') != null;
   }
 }
