@@ -21,7 +21,7 @@ export class AuthService {
     let options = {
       headers: httpHeader
     };
-    return this.http.post<SignupPayload>(this.url+'signup', signupPayload, options);
+    return this.http.post<SignupPayload>(this.url + 'signup', signupPayload, options);
   }
 
   connectLoginApi(loginPayload: LoginPayload): Observable<string> {
@@ -29,7 +29,7 @@ export class AuthService {
     let options = {
       headers: httpHeader
     };
-    return this.http.post<JwtAuthResponse>(this.url+'login', loginPayload, options).pipe(map(data => {
+    return this.http.post<JwtAuthResponse>(this.url + 'login', loginPayload, options).pipe(map(data => {
       this.localStorageService.store('authenticationToken', data.authenticationToken);
       this.localStorageService.store('username', data.username);
       this.localStorageService.store('role', data.role);
