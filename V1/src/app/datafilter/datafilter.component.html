@@ -1,0 +1,86 @@
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #2F89F7;">
+
+   <ul class="navbar-nav navbar-collapse justify-content-end"> 
+    <li>
+             
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="tagType">
+            <option selected>Search Tag</option>
+            <option value="1">Invoice No.</option>
+            <option value="2">Shop Name</option>
+            <option value="3">Payment Method</option>
+            <option value="4">Payment Status</option>
+        </select>
+                
+     </li>
+            
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end"> 
+        <li><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tag Name" [(ngModel)]="tagName"></li>
+    </ul>
+     <ul class="navbar-nav navbar-collapse justify-content-end"> 
+        <li class=""><label>Start Time :  </label></li>
+        <li><input type="date" class="form-control" id="exampleFormControlInput1" [(ngModel)]="startDate"> </li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end"> 
+        <li class=""><label>End Time :  </label></li>
+        <li><input type="date" class="form-control" id="exampleFormControlInput1" [(ngModel)]="endDate"> </li>
+    </ul>
+    <ul class="navbar-nav navbar-collapse justify-content-end"> 
+        <li><a  class="nav-link" ><button type="button" class="btn btn-success" (click)="find()">Search</button></a>
+    </ul>
+     
+
+   </nav>
+   
+
+   <br><br><br>
+
+   <nav class="navbar navbar-expand-md navbar-light">
+
+       <ul class="navbar-nav navbar-collapse justify-content-end"> 
+            <li><button type="button" class="btn btn-success">Save</button></li>
+            <li><button type="button" class="btn btn-success">Manage</button></li>
+       </ul>
+    </nav>
+
+    <br><br><br>
+
+    
+    <table class="table">
+    <thead style="background-color: #2F89F7;">
+        <tr>
+            <th scope="col">Invoice Name</th>
+            <th scope="col">Shop Name</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Expire Date</th>
+            <th scope="col">Status</th>
+            <th scope="col">Value</th>
+            <th scope="col">Peyment
+                <tr>
+                    <th scope="col">check</th>
+                    <th scope="col">cash</th>
+                    <th scope="col">credits</th>
+                </tr>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let d of data"> 
+          <td> {{d.invoiceNo}}</td>
+          <td>{{d.shopName}}</td>
+          <td>{{d.issuedDate | date}}</td>
+          <td>{{d.expireDate | date}}</td>
+          <td>{{d.status}}</td>
+          <td>{{d.value}}</td>
+          <td>
+            <tr>
+                <td>{{d.payment.check}}</td>
+                <td>{{d.payment.cash}}</td>
+                <td>{{d.payment.credit}}</td>
+            </tr>
+          </td>
+        </tr>
+       
+    </tbody>
+</table>
+
