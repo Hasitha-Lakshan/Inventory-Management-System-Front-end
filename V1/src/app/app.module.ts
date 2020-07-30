@@ -7,7 +7,8 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { NavbarComponent } from './admin-dashboard/navbar/navbar.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,10 @@ import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

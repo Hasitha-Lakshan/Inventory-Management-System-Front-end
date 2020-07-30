@@ -1,21 +1,28 @@
 <table class="table" id="tableid">
     <thead class="bg-primary">
-        <tr>
-            <th scope="col">USERS</th>
-            <th scope="col">ROLE</th>
-            <th scope="col">USERNAME</th>
-            <th scope="col">PASSWORD</th>
-            <th scope="col">TPNUMBER</th>
-            <th scope="col">ADDRESS</th>
-        </tr>
+       
+            <tr>
+                <th scope="col">USERNAME</th>
+                <th scope="col">ROLE</th>
+                <th scope="col">FIRSTNAME</th>
+                <th scope="col">LASTNAME</th>
+                <th scope="col">ADDRESS LINE3</th>
+                <th scope="col">ACCOUNT STATUS</th>
+            </tr>
+        
+        
     </thead>
-    <tbody class="tboby">
-        <tr>
-            <td>
+    <tbody >
+        
+          
+      
+        <tr *ngFor="let user of users">
+            <th>
                   
                 <!-- Button trigger modal -->
+                
                 <a  class="usernamelink"data-toggle="modal" data-target="#userUpdateForm">
-                   USERNAME_1
+                   {{user.username}}
                 </a>
                 
                 <!-- Modal -->
@@ -28,56 +35,67 @@
                     
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form class="form-group" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
                                 
                                 <div class="form-group form-inline ">
                                 <label for="firstname" class="p-3 mb-2 bg-primary text-white">FIRSTNAME</label>
-                                <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Required field">
+                                <input type="text" class="form-control" id="firstname" [formControlName]="'firstname'" name="firstname" placeholder="Required field">
                                 </div>
                                 
                                 <div class="form-group form-inline">
                                     <label for="lastname" class="p-3 mb-2 bg-primary text-white">LASTNAME</label>
-                                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Required field">
+                                    <input type="text" class="form-control" id="lastname" [formControlName]="'lastname'" name="lastname" placeholder="Required field">
                                 </div>
-                                
+                                 <!--       
+                                <div class="form-group form-inline">
+                                    <label for="role" class="p-3 mb-2 bg-primary text-white">ROLE</label>
+                                    <input type="text" class="form-control" id="lastname" [formControlName]="'role'" name="lastname" placeholder="Required field">
+                                </div>
+                                -->
+                               
                                 <div class="form-group form-inline">
                                 <label for="role" class="p-3 mb-2 bg-primary text-white">ROLE</label>
                                 <div class="input-group mb-3">
             
-                                    <select class="custom-select" id="inputGroupSelect01" name="role">
+                                    <select class="custom-select" id="inputGroupSelect01" [formControlName]="'role'" name="role">
                                     <option selected>Select an option</option>
-                                    <option value="1">Analyzer</option>
-                                    <option value="2">Cach collector</option>
-                                    <option value="3">Inventory manager</option>
+                                    <option value="Analyzer">Analyzer</option>
+                                    <option value="Cach collector">Cach collector</option>
+                                    <option value="Inventory manager">Inventory manager</option>
                                     </select>
                                 </div>
                                 
                                 </div>
-                                
+                               
                                 <div class="form-group form-inline">
                                     <label for="username" class="p-3 mb-2 bg-primary text-white">USERNAME</label>
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Required field">
+                                    <input type="text" class="form-control" id="username" [formControlName]="'username'" name="username" placeholder="Required field">
                                 </div>
                                 
-                                <div class="form-group form-inline">
-                                    <label for="password" class="p-3 mb-2 bg-primary text-white">PASSWORD</label>
-                                    <input type="password" class="form-control" id="password" name="password" placeholder="Required field">
-                                </div>
+                               
+                                
+                               
                                 
                                 <div class="form-group form-inline">
-                                    <label for="tpnumber" class="p-3 mb-2 bg-primary text-white">TP NUMBER</label>
-                                    <input type="text" class="form-control" id="tpnumber" name="tpnumber" placeholder="Required field">
+                                    <label for="addressline1" class="p-3 mb-2 bg-primary text-white">ADDRESS LINE1</label>
+                                    <input type="text" class="form-control" id="address1" [formControlName]="'addressline1'" name="addressline1" placeholder="Required field">
                                 </div>
-                                
+
                                 <div class="form-group form-inline">
-                                    <label for="address" class="p-3 mb-2 bg-primary text-white">ADDRESS</label>
-                                    <input type="text" class="form-control" id="address" name="address" placeholder="Required field">
+                                    <label for="addressline2" class="p-3 mb-2 bg-primary text-white">ADDRESS LINE2</label>
+                                    <input type="text" class="form-control" id="address2" [formControlName]="'addressline2'" name="addressline2" placeholder="Required field">
                                 </div>
                                     
+                                <div class="form-group form-inline">
+                                    <label for="addressline3" class="p-3 mb-2 bg-primary text-white">ADDRESS LINE3</label>
+                                    <input type="text" class="form-control" id="address3" [formControlName]="'addressline3'" name="addressline3" placeholder="Required field">
+                                </div>
 
-                                <button type="button" class="btn btn-primary">REMOVE USER</button>
-                                <button type="button" class="btn btn-primary">UPDATE</button>
-                                <button type="submit" class="btn btn-primary">SAVE</button>
+                                
+
+                                
+                                <button type="submit" class="btn btn-primary">UPDATE</button>
+                                
                                 
                             </form>
                         </div>
@@ -89,13 +107,20 @@
                 </div>
                 
 
-            </td>
-            <td>userrole</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td> 
+            </th>
+            
+            
+            <th>{{user.role}}</th>
+            <th>{{user.firstName}}</th>
+            <th>{{user.lastName}}</th>
+            <th>{{user.address3}}</th>
+            <th>{{user.accountStatus}}</th>
+            
+           
+            
+            
         </tr>
+    
     </tbody>
+
 </table>
