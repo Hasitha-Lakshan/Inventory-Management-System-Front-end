@@ -55,32 +55,29 @@
             <th scope="col">Expire Date</th>
             <th scope="col">Status</th>
             <th scope="col">Value</th>
-            <th scope="col">Peyment
-                <tr>
-                    <th scope="col">check</th>
-                    <th scope="col">cash</th>
-                    <th scope="col">credits</th>
-                </tr>
-            </th>
+             <th scope="col">check</th>
+            <th scope="col">cash</th>
+            <th scope="col">credits</th>
+            <th scope="col">Update</th>
+                
+            
         </tr>
     </thead>
     <tbody>
         <tr *ngFor="let d of data"> 
-          <td> {{d.invoiceNo}}</td>
+          <td> {{d.invoiceId}}</td>
           <td>{{d.shopName}}</td>
           <td>{{d.issuedDate | date}}</td>
           <td>{{d.expireDate | date}}</td>
           <td>{{d.status}}</td>
           <td>{{d.value}}</td>
-          <td>
-            <tr>
-                <td>{{d.payment.check}}</td>
-                <td>{{d.payment.cash}}</td>
-                <td>{{d.payment.credit}}</td>
-            </tr>
-          </td>
+          <td>{{d.cheque}}</td>
+          <td>{{d.cash}}</td>
+          <td>{{d.credits}}</td>
+          <td><button type="button" (click)="updateReport(d.invoiceId)"  class="btn btn-primary">Update </button> </td>
+          
+            
         </tr>
        
     </tbody>
 </table>
-

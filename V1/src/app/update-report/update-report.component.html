@@ -1,0 +1,63 @@
+<h1> Update</h1>
+
+<div class="container">
+    <div class="form-group">
+      
+      <fieldset class="form-group">
+      <label for="">Invoice Id</label>
+      <input type="text" [(ngModel)]="data.invoiceId" class="form-control" name="invoiceId" id="" placeholder="Invoice id">
+      </fieldset>
+    <fieldset class="form-group">
+      <label for="">Shop Name</label>
+      <input type="text" [(ngModel)]="data.shopName" class="form-control" name="shopName" id="" placeholder="Shop Name">
+    </fieldset>
+<fieldset class="form-group">
+      <label for="">Issued Date</label>
+      <input type="date" [ngModel]="data.issuedDate | date:'yyy-MM-dd'" (ngModelChange)="data.issuedDate = $event" class="form-control" name="startDate" id="" placeholder="Startng Date">
+          </fieldset>
+
+
+      <fieldset class="form-group">
+      <label for="">Expire Date</label>
+      <input type="date" [ngModel]="data.expireDate | date:'yyy-MM-dd'" (ngModelChange)="data.expireDate = $event" class="form-control" name="expireDate" id="" placeholder="Expire Date">
+          </fieldset>
+
+
+      <fieldset class="form-group">
+      <label for="">Status</label>
+      <input type="text" [(ngModel)]="data.status" class="form-control" name="status" id="" placeholder="Status">
+          </fieldset>
+
+
+      <fieldset class="form-group">
+      <label for="">Value</label>
+      <input type="text" [(ngModel)]="data.value" class="form-control" name="value" id="" placeholder="Value">
+          </fieldset>
+
+
+      <fieldset class="form-group">
+      <label for="">Cheque</label>
+      <input type="text" [(ngModel)]="data.cheque"  class="form-control" name="cheque" id="" placeholder="Cheque">
+          </fieldset>
+
+
+      <fieldset class="form-group">
+      <label for="">Cash</label>
+      <input type="text" [(ngModel)]="data.cash" class="form-control" name="cash" id="" placeholder="Cash">
+          </fieldset>
+
+
+      <fieldset class="form-group">
+      <label for="">Credits</label>
+      <input type="text" [(ngModel)]="data.credits" class="form-control" name="credits" id="" placeholder="Credits">
+        </fieldset>
+
+        <button type="button" class="btn btn-primary" (click)="saveReport()">Save</button>
+
+
+
+
+
+      
+    </div>
+</div>
