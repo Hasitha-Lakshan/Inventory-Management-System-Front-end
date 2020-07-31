@@ -1,0 +1,93 @@
+<app-navbar></app-navbar>
+<div class="container ">
+      
+   
+    <button type="button" class="btn btn-primary" routerLink="users" >Users</button>
+<!-- Button trigger modal -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#statusForm">
+        SET ACCOUNT STATUS
+    </button>
+    
+    <!-- Modal -->
+    <div class="modal fade " id="statusForm" tabindex="-1" role="dialog" aria-labelledby="userRegistrationFormLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="bg-primary formheader">
+             
+              <h6 class="modal-title " id="userRegistrationFormheader"> <img class="regicon" src="assets/Icons/Icons/how_to_reg-24px.svg" alt="home" > SET ACCOUNT STATUS</h6>
+           
+            </div>
+            <div class="modal-body">
+                <form class="form-group" [formGroup]="statusForm" (ngSubmit)="onSubmitUpdateStatus()">
+                       
+                    <div class="form-group form-inline">
+                        <label for="username" class="p-3 mb-2 bg-primary text-white">USERNAME</label>
+                        <input type="text" class="form-control" id="username"  [formControlName]="'username'"  name="lastname" placeholder="Required field">
+                      </div>
+                       
+                    <div class="form-group form-inline">
+                      <label for="status" class="p-3 mb-2 bg-primary text-white">ACCOUNT STATUS</label>
+                      <div class="input-group mb-3">
+
+                        <select class="custom-select" id="inputGroupSelect01" [formControlName]="'accountStatus'"  name="status">
+                          <option selected>Select an option</option>
+                          <option value="true">Activate</option>
+                          <option value="false">Deactivate</option>
+                          
+                        </select>
+                      </div>
+                      
+                    </div>
+                       
+                    
+                        
+                          
+                   
+                   
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    
+                  </form>
+            </div>
+            
+        </div>
+        </div>
+        
+    </div>
+    <!---->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteForm">
+      DELETE USER
+   </button>
+  
+  <!-- Modal -->
+  <div class="modal fade " id="deleteForm" tabindex="-1" role="dialog" aria-labelledby="userRegistrationFormLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="bg-primary formheader">
+           
+            <h6 class="modal-title " id="userRegistrationFormheader"> <img class="regicon" src="assets/Icons/Icons/how_to_reg-24px.svg" alt="home" > DELETE USER</h6>
+         
+          </div>
+          <div class="modal-body">
+              <form class="form-group" [formGroup]="deleteForm" (ngSubmit)="onSubmitDeleteUser()">
+                     
+                  <div class="form-group form-inline">
+                      <label for="username" class="p-3 mb-2 bg-primary text-white">USERNAME</label>
+                      <input type="text" class="form-control" id="username"  [formControlName]="'username'"  name="lastname" placeholder="Required field">
+                    </div>
+                    
+                 
+                  <button type="submit" class="btn btn-primary">Delete</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  
+                </form>
+          </div>
+          
+      </div>
+      </div>
+</div>
+    
+    <router-outlet></router-outlet>
+  
+</div>
+
