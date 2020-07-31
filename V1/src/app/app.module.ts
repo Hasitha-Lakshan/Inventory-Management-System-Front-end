@@ -7,7 +7,6 @@ import { NgxWebstorageModule } from 'ngx-webstorage'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
-import { NavbarComponent } from './admin-dashboard/navbar/navbar.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -19,7 +18,6 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     AppComponent,
     AdminDashboardComponent,
-    NavbarComponent,
     UsersComponent,
     NewuserComponent,
     AppComponent,

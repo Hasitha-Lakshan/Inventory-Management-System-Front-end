@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {NavbarComponent} from './navbar/navbar.component'
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
 import {AdminserviceService} from '../services/adminservice.service';
 @Component({
