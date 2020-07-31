@@ -4,7 +4,7 @@
     <li>
              
         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="tagType">
-            <option selected>Search Tag</option>
+            <option selected >Search Tag</option>
             <option value="1">Invoice No.</option>
             <option value="2">Shop Name</option>
             <option value="3">Payment Method</option>
@@ -14,36 +14,47 @@
      </li>
             
     </ul>
-    <ul class="navbar-nav navbar-collapse justify-content-end"> 
-        <li><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Tag Name" [(ngModel)]="tagName"></li>
+    <ul *ngIf="tagType==-1" class="navbar-nav navbar-collapse justify-content-end"> 
+        <li><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Search..."  [(ngModel)]="tagName" ></li>
     </ul>
-     <ul class="navbar-nav navbar-collapse justify-content-end"> 
+    <ul *ngIf="tagType==2" class="navbar-nav navbar-collapse justify-content-end"> 
+        <li><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Shop Name..."  [(ngModel)]="shopName"></li>
+    </ul>
+    <ul *ngIf="tagType==1" class="navbar-nav navbar-collapse justify-content-end"> 
+        <li><input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Invoice No..."  [(ngModel)]="invoiceNo"></li>
+    </ul>
+    <ul *ngIf="tagType==3" class="navbar-nav navbar-collapse justify-content-end"> 
+        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="paymentMethod">
+            <option selected value="1">Cash</option>
+            <option value="2">Cheque</option>
+        </select>
+    </ul>
+    <ul *ngIf="tagType==4" class="navbar-nav navbar-collapse justify-content-end"> 
+         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="paymentStatus">
+            <option selected value="1">Active</option>
+            <option value="2">InActive</option>
+        </select>
+    </ul>
+     <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
         <li class=""><label>Start Time :  </label></li>
-        <li><input type="date" class="form-control" id="exampleFormControlInput1" [(ngModel)]="startDate"> </li>
+        <li><input type="date" class="form-control" id="exampleFormControlInput1" [ngModel]="startDate | date:'yyy-MM-dd'" (ngModelChange)="startDate = $event" > </li>
     </ul>
-    <ul class="navbar-nav navbar-collapse justify-content-end"> 
+    <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
         <li class=""><label>End Time :  </label></li>
-        <li><input type="date" class="form-control" id="exampleFormControlInput1" [(ngModel)]="endDate"> </li>
+        <li><input type="date" class="form-control" id="exampleFormControlInput1" [ngModel]="endDate | date:'yyy-MM-dd'" (ngModelChange)="endDate = $event"> </li>
     </ul>
     <ul class="navbar-nav navbar-collapse justify-content-end"> 
-        <li><a  class="nav-link" ><button type="button" class="btn btn-success" (click)="find()">Search</button></a>
+        <li><a  class="nav-link" ><button type="button" class="btn btn-success" (click)="filter()">Search</button></a>
+        <li *ngIf="isReset"><a  class="nav-link" ><button type="button" class="btn btn-warning" (click)="reset()">Reset</button></a>
     </ul>
      
 
    </nav>
    
 
-   <br><br><br>
+   <br><br>
 
-   <nav class="navbar navbar-expand-md navbar-light">
-
-       <ul class="navbar-nav navbar-collapse justify-content-end"> 
-            <li><button type="button" class="btn btn-success">Save</button></li>
-            <li><button type="button" class="btn btn-success">Manage</button></li>
-       </ul>
-    </nav>
-
-    <br><br><br>
+  
 
     
     <table class="table">
@@ -64,7 +75,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let d of data"> 
+        <tr *ngFor="let d of data | filter:shopName"> 
           <td> {{d.invoiceId}}</td>
           <td>{{d.shopName}}</td>
           <td>{{d.issuedDate | date}}</td>

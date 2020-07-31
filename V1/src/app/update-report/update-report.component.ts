@@ -36,4 +36,8 @@ export class UpdateReportComponent implements OnInit {
     )
   }
 
+  cancel(){
+    this.router.navigate(['invoice-reports'])
+  }
+
 }

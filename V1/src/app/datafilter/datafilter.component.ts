@@ -41,10 +41,18 @@ export class DatafilterComponent implements OnInit {
 // ];
 data: Data[]
 
-tagType: number
-tagName: any
-startDate: Date
-endDate: Date
+
+tagType: number = -1
+tagName: any = ''
+invoiceNo: number
+shopName: string
+paymentMethod: number
+paymentStatus: number
+startDate: Date = new Date();
+endDate: Date = new Date();
+isReset:boolean = false
+
+report: Data;
 
 
   constructor(
@@ -61,7 +69,58 @@ endDate: Date
     )
   }
 
-  find(){
+  filter(){
+    this.isReset= true;
+    this.reset()
+    console.log(this.tagType);
+    console.log(this.invoiceNo);
+    if(this.tagType==1){
+        this.dataService.getReportById(this.invoiceNo).subscribe(
+          response => {
+            console.log(response)
+            this.data.length=0;
+            this.data.push(response);
+          }
+        )
+    }else if(this.tagType==2){
+      let dateFilter: Data[]
+       
+      dateFilter = this.data.filter(
+        (d) =>
+          new Date(d.issuedDate) >= new Date(this.startDate) &&
+          new Date(d.issuedDate) <= new Date(this.endDate)
+      );
+      console.log(dateFilter);
+      this.data.length=0;
+      this.data =dateFilter;
+      console.log(this.data)
+      
+    }else if(this.tagType==4){
+      let ps: Data[];
+      if(this.paymentStatus==1){
+          ps = this.data.filter(
+            (d) =>
+              d.status == true &&
+              new Date(d.issuedDate) >= new Date(this.startDate) &&
+              new Date(d.issuedDate) <= new Date(this.endDate)
+          );
+          console.log(ps);
+          this.data.length = 0;
+          this.data= ps
+          console.log(this.data);
+      }else if(this.paymentStatus==2){
+        ps = this.data.filter(
+          (d) =>
+            d.status == false &&
+            new Date(d.issuedDate) >= new Date(this.startDate) &&
+            new Date(d.issuedDate) <= new Date(this.endDate)
+        );
+        console.log(ps);
+        this.data.length = 0;
+        this.data = ps;
+        console.log(this.data);
+      }
+    }
     
   }
 
@@ -71,7 +130,27 @@ endDate: Date
 
   }
 
+  // refresh() {
+  //   console.log("clicked")
+  //   this.dataService.getReports().subscribe(
+  //     response => {
+  //       console.log(response)
+  //       this.data = response;
+  //     });
+  //     this.reset()
+  // }
 
+  reset(){
+    this.tagType=-1;
+    this.dataService.getReports().subscribe(
+      response => {
+        console.log(response)
+        this.data = response;
+      });
+    this.isReset = false;
+  }
+   
+  
 
 
   
