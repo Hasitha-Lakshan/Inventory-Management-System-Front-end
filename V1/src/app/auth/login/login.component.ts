@@ -38,7 +38,7 @@ export class LoginComponent implements OnInit {
     this.authService.connectLoginApi(loginPayloadData).subscribe(role => {
 
       if (role == "ADMIN") {
-        this.router.navigateByUrl('header');
+        this.router.navigateByUrl('admin');
       }
       else if (role == "ANALYZER") {
         this.router.navigateByUrl('header');

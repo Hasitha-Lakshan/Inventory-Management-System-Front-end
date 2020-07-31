@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LocalStorageService } from 'ngx-webstorage';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  username: string;
+
+  constructor(private authService: AuthService, private localStorageService: LocalStorageService) { }
 
   ngOnInit(): void {
+
+    this.getUserName();
+  }
+
+  getUserName() {
+    this.username = this.localStorageService.retrieve('username');
+  }
+
+  logout() {
+    this.authService.logout();
   }
 
 }
