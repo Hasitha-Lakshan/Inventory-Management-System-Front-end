@@ -1,11 +1,17 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {ReportsComponent} from './reports/reports.component';
-import {NewLoadingComponent} from './new-loading/new-loading.component';
-import {ManageComponent} from './manage/manage.component'
+import {ReportsComponent} from '../app/lorry-dashboard/reports/reports.component'
+import {NewLoadingComponent} from '../app/lorry-dashboard/new-loading/new-loading.component'
+import {ManageComponent} from '../app/lorry-dashboard/manage/manage.component'
+import {NavbarComponent} from '../app/lorry-dashboard/navbar/navbar.component'
 import { from } from 'rxjs';
 
 const routes: Routes = [
+  {
+    path:'navbar',
+    component:NavbarComponent
+  },
+
   {
     path:'reports',
     component:ReportsComponent
