@@ -13,7 +13,7 @@ import { Observable } from 'rxjs';
 export class UsersComponent implements OnInit {
  
   updateUserPaylord:UpdateUserPaylord;
-  users={};
+  users:Observable<Array<UserPaylord>>;
   updateForm = new FormGroup({
     firstname:new FormControl(''),
     lastname:new FormControl(''),
@@ -34,14 +34,18 @@ export class UsersComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.adminserviceService.getAllUsers().subscribe((userData)=>{
+    this.users=this.adminserviceService.getAllUsers();
         
-        this.users=userData
-    });
+    
     
   }
   onSubmit(){
-    this.adminserviceService.updateUser(this.updateForm.value)
+    this.adminserviceService.updateUser(this.updateForm.value).subscribe(data=>{
+      console.log(data)
+    },error=>{
+      alert("update unsuccessful")
+    }
+    )
 
     
   }
