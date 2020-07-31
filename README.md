@@ -26,6 +26,10 @@ This application is created for the front-end of a web-based Inventory Managemen
    ```
    "./node_modules/bootstrap/dist/css/bootstrap.min.css"
    ```
+   * Installing popper.js:
+   ```
+   npm install popper.js --save
+   ```
    * Installing jQuery:
    ```
    npm install jquery --save
@@ -34,6 +38,14 @@ This application is created for the front-end of a web-based Inventory Managemen
    ```
    "./node_modules/jquery/dist/jquery.min.js",
    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+   ```
+   * Installing ngx-webstorage:
+   ```
+   npm install --save ngx-webstorage
+   ```
+   * Fix the bad dependencies:
+   ```
+   npm audit fix --force
    ```
    Note: Access to the "V1" folder using cmd before installing the packages.
 3. Run the server:

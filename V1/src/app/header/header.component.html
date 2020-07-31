@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top sticky-top">
+    <span class="navbar-brand">Welcome! {{username}}</span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-md-end" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <button class="logout nav-link btn my-2" [routerLink]="['/home']" (click)="logout()">Logout</button>
+            </li>
+        </ul>
+    </div>
+</nav>
