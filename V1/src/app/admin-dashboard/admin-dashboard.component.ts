@@ -34,12 +34,20 @@ export class AdminDashboardComponent implements OnInit {
   }
 
   onSubmitUpdateStatus(){
-    this.adminserviceService.setStatus(this.statusForm.value)
+    this.adminserviceService.setStatus(this.statusForm.value).subscribe(data=>{
+      console.log(data)
+    },error=>{
+      alert("Status update unsuccessful for user")
+    })
 
     
   }
   onSubmitDeleteUser(){
-    this.adminserviceService.deleteUser(this.deleteForm.value)
+    this.adminserviceService.deleteUser(this.deleteForm.value).subscribe(data=>{
+      console.log(data)
+    },error=>{
+      alert("deletion unsuccessful")
+    })
   }
 
 }

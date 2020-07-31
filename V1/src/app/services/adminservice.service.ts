@@ -26,8 +26,8 @@ updateUser(data){
   updateUserPaylord.username=data.username;
 
   console.log(updateUserPaylord)
-  this.httpclient.put('http://localhost:8080/api/admin/updateuser',updateUserPaylord)
-  
+  return this.httpclient.put("http://localhost:8080/api/admin/updateuser",updateUserPaylord)
+
   
 
 }
@@ -35,22 +35,21 @@ updateUser(data){
 
 
 getAllUsers(){
-  return this.httpclient.get('http://localhost:8080/api/admin/users')
+  return this.httpclient.get<Array<UserPaylord>>("http://localhost:8080/api/admin/users");
   
 }
 setStatus(data){
   let statusPaylord=new StatusPaylord();
   statusPaylord.username=data.username;
   statusPaylord.accountStatus=data.accountStatus;
-  this.httpclient.put('http://localhost:8080/api/admin/setaccountstatus',statusPaylord);
   console.log(statusPaylord);
-
+  return this.httpclient.put("http://localhost:8080/api/admin/setaccountstatus",statusPaylord);
 }
 
 deleteUser(data){
   let deleteUserPaylord=new DeleteUserPaylord();
   deleteUserPaylord.username=data.username;
-  this.httpclient.put('http://localhost:8080/api/admin/deleteuser',deleteUserPaylord);
-  console.log(deleteUserPaylord)
+  console.log(deleteUserPaylord);
+  return this.httpclient.put("http://localhost:8080/api/admin/deleteuser",deleteUserPaylord);
 }
 }
