@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import{AnalyzerReportsComponent } from './analyzer-reports/analyzer-reports.component';
-import{EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import { AnalyzerSelectionComponent } from './analyzer-selection/analyzer-selection.component';
+import{AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
+import{EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
 
 export const routes: Routes = [
   {path:'', component:AnalyzerSelectionComponent},

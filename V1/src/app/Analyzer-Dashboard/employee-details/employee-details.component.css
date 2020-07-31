@@ -25,35 +25,9 @@
 
 
 
-a {
-    color: #fff;
-    text-decoration: none;
-    background-color: transparent;
-    font-family: Arial;
-}
-
-img {
-    vertical-align: top;
-    border-style: none;
-    height: fit-content;
-    fill: #fff;
-    vertical-align: middle;
-}
-
-.btn{
-    position:relative;
-    left:0;
-    background-color: #007bff;
-    font-family: Arial;
-    transform:translateX(-50%);
-    margin-right: 200px;
-    color: #fff;
-    font-size: 15px;
-    margin-left: 100px;
-    text-align: center;
-    width: 100px;
-    
-    
+.btn-light{
+    height: 23px;
+    width: 23px;
 }
 
 
@@ -79,14 +53,32 @@ img {
 
 
 
+.btn-light{
+    height: 40px;
+    width: 50px;
+    width: fit-content;
+    background-color: #0076ff;
+}
 
 
+.search{
+    height: 18px;
+    width: 18px;
+}
+
+.input-group-append{
+    
+    height: 38px;
+    width: 40px;
+}
 
 
-
-
-
-
+a {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    font-family: Arial;
+}
 
 
 

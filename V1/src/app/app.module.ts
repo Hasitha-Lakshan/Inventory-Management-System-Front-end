@@ -3,8 +3,11 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule,routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AnalyzerSelectionComponent } from './analyzer-selection/analyzer-selection.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
+import { NavBarComponent } from './Analyzer-Dashboard/nav-bar/nav-bar.component';
+
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,7 +18,9 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
