@@ -6,6 +6,7 @@ import { JwtAuthResponse } from '../auth/login/jwt-auth-response';
 import { map } from 'rxjs/operators';
 import { LocalStorageService } from 'ngx-webstorage';
 import { SignupPayload } from '../auth/signup/signup-payload'
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AuthService {
 
   private url = "http://localhost:8080/api/auth/";
 
-  constructor(private http: HttpClient, private localStorageService: LocalStorageService) { }
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService, public jwtHelper: JwtHelperService) { }
 
   connectSignupApi(signupPayload: SignupPayload): Observable<SignupPayload> {
     let httpHeader = new HttpHeaders().set('Content-Type', 'application/Json');
@@ -39,7 +40,8 @@ export class AuthService {
   }
 
   isAuthenticated(): Boolean {
-    return this.localStorageService.retrieve('username') != null;
+    const authenticationToken = this.localStorageService.retrieve('authenticationToken');
+    return !this.jwtHelper.isTokenExpired(authenticationToken);
   }
 
   logout() {

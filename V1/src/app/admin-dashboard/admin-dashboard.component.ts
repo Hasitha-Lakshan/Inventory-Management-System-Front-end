@@ -1,50 +1,48 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
-import {AdminserviceService} from '../services/adminservice.service';
+import { AdminserviceService } from '../services/adminservice.service';
 @Component({
   selector: 'app-admin-dashboard',
   templateUrl: './admin-dashboard.component.html',
   styleUrls: ['./admin-dashboard.component.css']
 })
 export class AdminDashboardComponent implements OnInit {
-  statusForm = new FormGroup({
-   
-    username:new FormControl(''),
-    accountStatus:new FormControl('')
 
-    
-  });
+  statusForm: FormGroup;
+  deleteForm: FormGroup;
 
- deleteForm = new FormGroup({
-   
-    username:new FormControl('')
-   
-  });
-
-  constructor(private adminserviceService:AdminserviceService) { }
+  constructor(private adminserviceService: AdminserviceService) { }
 
   ngOnInit(): void {
+
+    this.statusForm = new FormGroup({
+
+      username: new FormControl(''),
+      accountStatus: new FormControl('')
+
+
+    });
+
+    this.deleteForm = new FormGroup({
+
+      username: new FormControl('')
+
+    });
   }
 
- 
-  changeColor(e)
-  {
-   
-  }
-
-  onSubmitUpdateStatus(){
-    this.adminserviceService.setStatus(this.statusForm.value).subscribe(data=>{
+  onSubmitUpdateStatus() {
+    this.adminserviceService.setStatus(this.statusForm.value).subscribe(data => {
       console.log(data)
-    },error=>{
+    }, error => {
       alert("Status update unsuccessful for user")
     })
 
-    
+
   }
-  onSubmitDeleteUser(){
-    this.adminserviceService.deleteUser(this.deleteForm.value).subscribe(data=>{
+  onSubmitDeleteUser() {
+    this.adminserviceService.deleteUser(this.deleteForm.value).subscribe(data => {
       console.log(data)
-    },error=>{
+    }, error => {
       alert("deletion unsuccessful")
     })
   }
