@@ -26,7 +26,8 @@
             "allowedCommonJsDependencies": [
               "socket.io-client",
               "socket.io-parser",
-              "debug"
+              "debug",
+              "lodash"
             ],
             "styles": [
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
