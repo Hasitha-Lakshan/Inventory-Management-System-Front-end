@@ -13,10 +13,9 @@ import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientInterceptor } from './http-client-interceptor';
+import { HttpClientInterceptor } from './security/http-client-interceptor';
 import { HeaderComponent } from './header/header.component';
-import { AuthGuard } from './auth.guard';
-import { RoleGuard } from './role.guard';
+import { AuthGuard } from './security/auth.guard';
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -55,7 +54,7 @@ export function tokenGetter() {
       }
     }),
   ],
-  providers: [AuthGuard,RoleGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
