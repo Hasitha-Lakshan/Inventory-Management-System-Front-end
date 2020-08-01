@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetreportService } from '../services/getreport.service';
+import { GetreportService } from '../../services/getreport.service';
 import { Router } from '@angular/router';
 
 

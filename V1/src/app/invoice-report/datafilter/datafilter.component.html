@@ -75,7 +75,7 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let d of data | filter:shopName"> 
+        <tr *ngFor="let d of data"> 
           <td> {{d.invoiceId}}</td>
           <td>{{d.shopName}}</td>
           <td>{{d.issuedDate | date}}</td>

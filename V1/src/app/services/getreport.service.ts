@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Data } from '../datafilter/datafilter.component';
+import { Data } from '../invoice-report/datafilter/datafilter.component';
 
 @Injectable({
   providedIn: 'root'

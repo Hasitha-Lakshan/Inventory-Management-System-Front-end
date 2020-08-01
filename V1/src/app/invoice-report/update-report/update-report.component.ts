@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetreportService } from '../services/getreport.service';
+import { GetreportService } from '../../services/getreport.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Data} from '../datafilter/datafilter.component'
 
