@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AuthService } from '../services/auth.service';
-import jwtDecode from 'jwt-decode'; 
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { LocalStorageService } from 'ngx-webstorage';
 import { Authorities } from './authorities';
 
@@ -11,14 +11,14 @@ import { Authorities } from './authorities';
 })
 export class AuthGuard implements CanActivate {
 
-  constructor(private authService: AuthService, private router: Router, private localStorageService: LocalStorageService) { }
+  constructor(private authService: AuthService, private router: Router, private localStorageService: LocalStorageService, private jwtHelperService: JwtHelperService) { }
 
   canActivate(activatedRouteSnapshot: ActivatedRouteSnapshot, state: RouterStateSnapshot):
     Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
 
     const expectedRole = activatedRouteSnapshot.data.expectedRole;
     const token = this.localStorageService.retrieve('authenticationToken');
-    const tokenPayload = jwtDecode(token);
+    const tokenPayload = this.jwtHelperService.decodeToken(token);
 
     let authorities: Authorities[];
     authorities = tokenPayload.authorities;
