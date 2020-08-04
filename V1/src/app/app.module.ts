@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-selections/inventory-manager-selections.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
 import { ShopsDetailsComponent } from './shops-details/shops-details.component';
+import {ShopServiceService} from './shop-service.service';
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,9 +20,11 @@ import { ShopsDetailsComponent } from './shops-details/shops-details.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
   ],
-  providers: [],
+  providers: [ShopServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -12,6 +12,7 @@
 
 .btn{
     border-radius: 0 ;
+    background-color:#007bff;
 }
 
 .table{
@@ -19,6 +20,11 @@
 }
 
 .image{
+    width: 20px;
+    height: 20px;
+}
+
+.image1{
     width: 20px;
     height: 20px;
 }
