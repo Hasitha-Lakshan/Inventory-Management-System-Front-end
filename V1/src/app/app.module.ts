@@ -18,8 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './security/auth.guard';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-selections/inventory-manager-selections.component';
 import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import { ShopsDetailsComponent } from './shops-details/shops-details.component';
-import { ShopServiceService} from './shop-service.service';
+import { ShopsDetailsComponent } from './shops-details/shops-details.component'
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -56,7 +55,7 @@ export function tokenGetter() {
       }
     }),
   ],
-  providers: [AuthGuard,ShopServiceService, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+  providers:[AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
