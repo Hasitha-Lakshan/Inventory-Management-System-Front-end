@@ -1,9 +1,8 @@
-
+<app-header></app-header>
 <!--nav bar-->
-<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+<!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
 
     <ul class="navbar-nav">
-      <!--home button-->
       <li class="nav-item active margin-left1">
         <a class="nav-link ml-5 mx-5 pl-5 margin-left1" [routerLink]="['/home']">
             <img src="assets\Icons\Icons\home-24px.svg" >HOME</a>
@@ -16,11 +15,10 @@
       <li class="nav-item active margin-left2 "><img class="image" src="assets\Icons\Icons\user-solid.svg">
        <a href="" class="navbar-brand">Inventory Manager</a>
       </li>
-      <!--sign out button-->
       <button type="button" class="btn1 btn-outline-light btn-primary" [routerLink]="['/home']">SIGN OUT</button>
 
     </ul>
-</nav>
+</nav> -->
 
 <br><br> <!--search shop-->
 
@@ -30,7 +28,7 @@
       <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search Shops.." name="shopName" [(ngModel)]="shopName"/>
         <div class="input-group-append">
-          <button class="btn btn-primary"  (click)="findShop()"><img class="image1" src="assets\White\search-13-32.jpg"> </button>
+          <button class="btn btn-primary"  (click)="findShop()"><img class="image1" src="../../../assets/Icons/Icons/search-13-32.jpg"> </button>
         </div>
       </div>
     </div>

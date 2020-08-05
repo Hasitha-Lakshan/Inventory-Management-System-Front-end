@@ -44,11 +44,12 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('header');
       }
       else if (role == "INVENTORY_MANAGER") {
-        this.router.navigateByUrl('header');
+        this.router.navigateByUrl('inventory_manager');
       }
       else if (role == "CASH_COLLECTOR") {
         this.router.navigateByUrl('header');
-      }}, 
+      }
+    },
       error => {
         this.notRegistered = true;
       });

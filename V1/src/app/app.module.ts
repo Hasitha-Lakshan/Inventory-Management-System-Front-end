@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxWebstorageModule } from 'ngx-webstorage'
 import { JwtModule } from "@auth0/angular-jwt";
 
@@ -16,9 +16,9 @@ import { HomeComponent } from './home/home.component';
 import { HttpClientInterceptor } from './security/http-client-interceptor';
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './security/auth.guard';
-import { InventoryManagerSelectionsComponent } from './inventory-manager-selections/inventory-manager-selections.component';
-import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
-import { ShopsDetailsComponent } from './shops-details/shops-details.component'
+import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
+import { EmployeeDetailsComponent } from './inventory-manager-dashboard/employee-details/employee-details.component';
+import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component'
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -55,7 +55,7 @@ export function tokenGetter() {
       }
     }),
   ],
-  providers:[AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

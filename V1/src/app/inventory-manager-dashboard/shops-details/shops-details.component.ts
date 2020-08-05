@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ShopServiceService } from '../shop-service.service';
+import { ShopServiceService } from '../../services/shop-service.service';
 
 @Component({
   selector: 'app-shops-details',
