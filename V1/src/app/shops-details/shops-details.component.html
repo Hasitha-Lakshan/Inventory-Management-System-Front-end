@@ -5,19 +5,19 @@
     <ul class="navbar-nav">
       <!--home button-->
       <li class="nav-item active margin-left1">
-        <a class="nav-link ml-5 mx-5 pl-5 margin-left1" routerLink="" >
-            <img src="assets\White\home-24px.svg" >HOME</a>
+        <a class="nav-link ml-5 mx-5 pl-5 margin-left1" [routerLink]="['/home']">
+            <img src="assets\Icons\Icons\home-24px.svg" >HOME</a>
       </li>
 
-      <li class="nav-item active margin-left1 margin-right "><img src="assets\White\storefront-24px.svg">
+      <li class="nav-item active margin-left1 margin-right "><img src="assets\Icons\Icons\storefront-24px.svg">
         <a href="" class="navbar-brand">SHOPS</a>
       </li>
       
-      <li class="nav-item active margin-left2 "><img class="image" src="assets\White\user-solid.svg">
+      <li class="nav-item active margin-left2 "><img class="image" src="assets\Icons\Icons\user-solid.svg">
        <a href="" class="navbar-brand">Inventory Manager</a>
       </li>
       <!--sign out button-->
-      <button type="button" class="btn1 btn-outline-light btn-primary"><a routerLink=""></a>SIGN OUT</button>
+      <button type="button" class="btn1 btn-outline-light btn-primary" [routerLink]="['/home']">SIGN OUT</button>
 
     </ul>
 </nav>
