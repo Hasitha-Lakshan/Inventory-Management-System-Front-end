@@ -9,6 +9,9 @@ import { HeaderComponent } from './header/header.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
+import { InventoryManagerSelectionsComponent } from './inventory-manager-selections/inventory-manager-selections.component';
+import { EmployeeDetailsComponent } from './employee-details/employee-details.component';
+import { ShopsDetailsComponent } from './shops-details/shops-details.component';
 
 export const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,7 +22,10 @@ export const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ADMIN' } },
   { path: 'newuser', component: NewuserComponent },
   { path: 'users', component: UsersComponent },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
+  { path: 'selections', component: InventoryManagerSelectionsComponent},
+  { path: 'employeeDetails', component: EmployeeDetailsComponent},
+  { path: 'shopDetails', component: ShopsDetailsComponent}
 ];
 
 @NgModule({
@@ -27,3 +33,4 @@ export const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+export const routingComponents=[InventoryManagerSelectionsComponent,EmployeeDetailsComponent,ShopsDetailsComponent]
