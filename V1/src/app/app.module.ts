@@ -8,6 +8,9 @@ import { ReportsComponent } from '../app/lorry-dashboard/reports/reports.compone
 import { ManageComponent } from '../app/lorry-dashboard/manage/manage.component'
 
 import { NavbarComponent } from './lorry-dashboard/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -15,12 +18,16 @@ import { NavbarComponent } from './lorry-dashboard/navbar/navbar.component';
     NewLoadingComponent,
     ReportsComponent,
     ManageComponent,
-    
-    NavbarComponent
+    NavbarComponent,
+  
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
