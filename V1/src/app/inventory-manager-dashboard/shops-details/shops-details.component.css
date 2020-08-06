@@ -1,0 +1,39 @@
+.margin-left1{
+    margin-left: 100px;
+}
+
+.margin-right{
+    margin-right: -200px;
+}
+
+.margin-left2{
+    margin-left: 500px;
+}
+
+.btn{
+    border-radius: 0 ;
+    background-color:#007bff;
+}
+
+.table{
+    text-align: center;
+}
+
+.image{
+    width: 20px;
+    height: 20px;
+}
+
+.image1{
+    width: 20px;
+    height: 20px;
+}
+
+.btn1{
+    border-style: solid;
+}
+
+.form-control {
+    color: #007bff;
+    background-color: #e9ecef;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AppRoutingModule} from './app-routing.module';
 
 
 @Component({
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'V1';
+  [x: string]: any;
 }
