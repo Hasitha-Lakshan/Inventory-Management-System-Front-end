@@ -19,6 +19,10 @@ import { AuthGuard } from './security/auth.guard';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
 import { EmployeeDetailsComponent } from './inventory-manager-dashboard/employee-details/employee-details.component';
 import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component'
+import { NewLoadingComponent } from '../app/lorry-dashboard/new-loading/new-loading.component'
+import { ReportsComponent } from '../app/lorry-dashboard/reports/reports.component'
+import { ManageComponent } from '../app/lorry-dashboard/manage/manage.component'
+import { NavbarComponent } from './lorry-dashboard/navbar/navbar.component';
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -39,6 +43,11 @@ export function tokenGetter() {
     InventoryManagerSelectionsComponent,
     EmployeeDetailsComponent,
     ShopsDetailsComponent,
+    NewLoadingComponent,
+    ReportsComponent,
+    ManageComponent,
+    NavbarComponent,
+  
   ],
   imports: [
     BrowserModule,

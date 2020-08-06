@@ -1,4 +1,4 @@
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { Routes, CanActivate, RouterModule } from '@angular/router';
 import { AuthGuard } from './security/auth.guard'
 
@@ -12,8 +12,13 @@ import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
 import { EmployeeDetailsComponent } from './inventory-manager-dashboard/employee-details/employee-details.component';
 import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component';
+import {ReportsComponent} from '../app/lorry-dashboard/reports/reports.component';
+import {NewLoadingComponent} from '../app/lorry-dashboard/new-loading/new-loading.component';
+import {ManageComponent} from '../app/lorry-dashboard/manage/manage.component';
+import {NavbarComponent} from '../app/lorry-dashboard/navbar/navbar.component';
 
-export const routes: Routes = [
+
+const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
@@ -25,7 +30,11 @@ export const routes: Routes = [
   { path: 'inventory_manager', component: InventoryManagerSelectionsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'shop_details', component: ShopsDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
+  { path:'navbar',component:NavbarComponent},
+  {path:'reports',component:ReportsComponent},
+  {path:'new-loading',component:NewLoadingComponent},
+  {path:'manage',component:ManageComponent}
 
 ];
 

@@ -24,12 +24,11 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
-              "./node_modules/bootstrap/dist/js/bootstrap.min.js"
+               "./node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -129,5 +128,8 @@
       }
     }
   },
-  "defaultProject": "V1"
+  "defaultProject": "V1",
+  "cli": {
+    "analytics": "2f0d2cbf-c738-435e-976d-d7ffcc8e316a"
+  }
 }

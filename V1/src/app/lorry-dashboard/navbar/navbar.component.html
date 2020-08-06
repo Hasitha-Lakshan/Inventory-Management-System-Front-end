@@ -1,0 +1,41 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link ml-5 mx-5 pl-5" href="#" >
+          <img src="assets/Icons/home-24px.svg" alt="home" >
+        HOME</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link ml-5 mx-5 pl-5" href="#">
+          <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping" >
+        DISTRIBUTION</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link ml-5 mx-5 pl-5 " href="#">
+          <img src="assets/Icons/user-solid.svg" alt="peopleAlt" > 
+        Inventory Manager</a>
+      </li>
+      <button type="button " class="btn btn-outline-light btn-primary margin-left ">SIGN OUT</button>
+    </ul>
+   </nav> 
+   
+   
+   
+   <div class="btn-toolbar text-center well">
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 margin-left1">
+      <span class="glyphicon glyphicon-plus" aria-hidden="true"></span><h5 routerLink="new-loading"> NEW LOADING</h5>
+    </button>
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 margin-left1">
+      <span class="glyphicon glyphicon-edit" aria-hidden="true"></span><h5 routerLink="reports"> REPORTS </h5>
+    </button>
+    <button type="button" class="btn btn-primary btn-color btn-bg-color btn-lg col-xs-2 margin-left1">
+      <span class="glyphicon glyphicon-time" aria-hidden="true"></span><h5 routerLink="manage"> MANAGE</h5>
+    </button>
+    
+  </div>
+
+ 
+   
+  <router-outlet></router-outlet>
+  
+  
