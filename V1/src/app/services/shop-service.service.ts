@@ -6,13 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ShopServiceService {
 
+  private url = "http://localhost:8080/api/inventoryManager/shops/";
+
   constructor(private http:HttpClient) { }
 
   public getAllShops(){
-    return this.http.get("http://localhost:8080/api/inventoryManager/shops");
+    return this.http.get(this.url);
   }
 
-  public getShopByName(shopName){
-    return this.http.get("http://localhost:8080/api/inventoryManager/shops/"+shopName);
+  public getShopByName(shopName:string){
+    return this.http.get(this.url+shopName);
   }
 }
