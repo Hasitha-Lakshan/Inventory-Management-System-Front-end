@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import {Lorry} from '../lorry-dashboard/manage/lorry'
-import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { environment } from 'src/environments/environment';
+import { Lorry } from '../inventory-manager-dashboard/distribution-dashboard/manage/lorry'
+import { HttpClient, HttpHeaders } from '@angular/common/http'
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,39 +8,19 @@ import { Observable } from 'rxjs';
 })
 export class LorryServiceService {
 
+  private url = "Http://localhost:8080/api/inventoryManager/distribution/"
+
   constructor(private httpClient: HttpClient) { }
-  
-  addLorryRequest (data){
 
-    let lorry = new Lorry();
-    lorry.firstName= data.fName;
-    lorry.lastName= data.lName;
-    lorry.phonenumber = data.phoneNumber;
-
-    let lorryData = {
-      firstName: lorry.firstName,
-      lastName: lorry.lastName,
-      phonenumber: lorry.phonenumber,
-      accuontStatus: 1
-    }
-    console.log(lorry);
-
-    return this.httpClient.post(environment.endPoint + "distribution/addlorry", lorryData);
+  addLorryRequest(lorry: Lorry): Observable<Lorry> {
+    return this.httpClient.post<Lorry>(this.url + "addlorry", lorry);
   }
 
-  getLorries() {
-    return this.httpClient.get<Lorry[]>(environment.endPoint + "distribution/lorries");
+  getLorries(): Observable<Lorry[]> {
+    return this.httpClient.get<Lorry[]>(this.url + "lorries");
   }
 
-  updateLorry(lorryID, firstName, lastName, phonenumber, accountStatus) {
-    let lorryData = {
-      lorryID: lorryID,
-        firstName: firstName,
-        lastName: lastName,
-        phonenumber: phonenumber,
-        accountStatus: accountStatus
-    }
-     
-    return this.httpClient.put(environment.endPoint + "distribution/updatelorry/{id}", lorryData)
+  updateLorry(lorry: Lorry): Observable<Lorry> {
+    return this.httpClient.put<Lorry>(this.url + "updatelorry/" + lorry.lorryID, lorry)
   }
 }
