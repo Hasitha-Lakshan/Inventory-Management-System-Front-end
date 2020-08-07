@@ -1,6 +1,6 @@
 <br><br>
 
-<div class="container custom-control custom-switch dropdown dropright">
+<div class="container custom-control custom-switch dropdown dropright mr-5 ">
   <div id="accordion">
 
     <p *ngIf="datasaved" class="alert alert-success">Successfully registered!</p>
@@ -8,7 +8,8 @@
     <p *ngIf="dataupdate" class="alert alert-success">Successfully updated!</p>
 
     <!-- Create a new lorry -->
-    <div class="formcard card text-white bg-primary mb-3">
+    <div class="container mt-5 mx-5">
+    <div class="formcard card text-white bg-primary mb-3 mx-5 ">
       <div class="card-header">
         <a class="card-link text-white " data-toggle="collapse" href="#collapseOne">
           <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping">
@@ -44,9 +45,11 @@
         </div>
       </div>
     </div>
+    </div>
 
     <!-- Get lorries from the database -->
-    <div *ngFor="let lorry of forms" class="formcard card text-white bg-primary mb-1 ">
+    <div class="container mx-5">
+    <div *ngFor="let lorry of forms" class="formcard card text-white bg-primary mb-1 mx-5">
       <div class="card-header ">
         <a class="collapsed card-link text-white" data-toggle="collapse" href="#lorry{{ lorry.id }}">
           <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping">
@@ -88,4 +91,5 @@
     </div>
 
   </div>
+</div>
 </div>
