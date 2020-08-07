@@ -8,7 +8,7 @@ import { NavBarComponent } from './Analyzer-Dashboard/nav-bar/nav-bar.component'
 
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-
+import {EmployeeDetailsService} from './Service/employee-details.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +22,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [EmployeeDetailsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

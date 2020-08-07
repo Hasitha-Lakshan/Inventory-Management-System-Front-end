@@ -53,7 +53,7 @@
 
 
 
-.btn-light{
+.btn-primary{
     height: 40px;
     width: 50px;
     width: fit-content;
@@ -97,4 +97,9 @@ th{
 td{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+.alert-danger
+{
+    text-align: center;
 }

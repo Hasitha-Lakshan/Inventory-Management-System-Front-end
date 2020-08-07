@@ -23,37 +23,17 @@
 <br>
 <br>
 <br>
-<div class="container">
-<div class="row">
-  <div class="col-lg-3 offset-7">
-    
-    <div class="input-group mb-3">
-      <input type="text" class="form-control" placeholder="Search">
-      <div class="input-group-append">
-        <button class="btn btn-light"><img class="search" src="assets\img\search-13-xl.png"></button>
-      </div>
+
+
+<div class="table-wrapper">
+  <div class="form-group col-lg-3 offset-6">
+  <div class="input-group mb-3 offset-7">
+    <input type="text" class="form-control" name="search" (input)="search()" [(ngModel)]="searchText" autocomplete="on" placeholder="Search By Id">
+    <div class="input-group-append">
+      <button class="btn btn-primary" (click)="search()"><img class="search" src="assets\img\search-13-xl.png"></button>
     </div>
-
-
-
-
-
-
-
-
-            
-                      <!----       <form class="form-group has-feedback">
-                              <div>
-                                  <input type="text" class="search-query form-control" placeholder="Search With Id">
-                                  
-                                <div class="container"> <button class="btn btn-light"><img class="search" src="assets\img\search-13-xl.png"></button></div>
-
-                                </div>
-                                </form>--->
-                             
-                          </div>
-                        </div>
-  
+  </div>  
+ </div>
 
 
 
@@ -64,38 +44,51 @@
 <div class="row row-content">
     <div class="col-12 col-sm-10 offset-1">
         <div class="table-responsive">
-            <table class="table">
-                <thead>
-                  <tr>
+            <table class="table" >
+              
+                <thead >
+                  <tr *ngIf="tool">
                     
                     <th>User Id</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Role</th>
                     <th>Address Line1</th>
                     <th>Address Line2</th>
                     <th>Address Line3</th>
-                    <th>Role</th>
-                    <th>Phone Type</th>
-                    <th >Phone Number</th>
+                    <th>Phone 1</th>
+                    <th>Phone 2</th>
+                    
+                    
+                    
                   </tr>
                 </thead>
-                <tbody>
-                  <tr *ngFor="">
-                    <!---<td>{{user.userID}}</td>
-                    <td>{{user.firstName}}</td>
-                    <td>{{user.lastName}}</td>
-                    <td>{{user.addressLine1}}</td>
-                    <td>{{user.addressLine2}}</td>
-                    <td>{{user.addressLine3}}</td>
-                    <td>{{user.role}}</td>
-                    <td>{{user.phoneType}}</td>
-                    <td>{{user.phoneNumber}}</td>--->
+                <tbody *ngFor="let lstEmp of lstEmp ; let i = index" >
+                  
+                  <tr>
+                  
+                    <td  >{{lstEmp.userID}}</td>
+                    <td >{{lstEmp.firstName}}</td>
+                    <td >{{lstEmp.lastName}}</td>
+                    <td  >{{lstEmp.role}}</td>
+                    <td >{{lstEmp.addressLine1}}</td>
+                    <td >{{lstEmp.addressLine2}}</td>
+                    <td  >{{lstEmp.addressLine3}}</td>
+                   
+                   <td  *ngFor = "let emp of lstEmp.phoneNumbers">{{emp.phoneType}}:{{emp.phoneNumber}}</td>
                   </tr>
+            
                 </tbody>
-              </table>
-           
-        </div>
-    </div>  
-</div>
 
+
+              </table>
+
+        </div>
+        <div class="col-4 offset-3">
+        <div class="alert alert-danger" role="alert" *ngIf ="!tool">
+          Employee Not Found!
+        </div>
+      </div>
+    </div>  
+  </div>
 </div>
