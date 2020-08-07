@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { FormBuilder, FormGroup, Validators, FormArray } from '@angular/forms'
 import { SignupPayload } from './signup-payload';
+import { LocalStorageService } from 'ngx-webstorage';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -10,7 +12,7 @@ import { SignupPayload } from './signup-payload';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private authService: AuthService, private formbuilder: FormBuilder) { }
+  constructor(private authService: AuthService, private formbuilder: FormBuilder, private router: Router, private localStorageService: LocalStorageService) { }
 
   title = 'User Signup Page';
 
@@ -20,6 +22,7 @@ export class SignupComponent implements OnInit {
   datanotsaved: boolean;
 
   ngOnInit(): void {
+    this.logincheck();
 
     this.signupForm = this.formbuilder.group({
       firstName: ['', [Validators.required]],
@@ -32,6 +35,30 @@ export class SignupComponent implements OnInit {
       username: ['', [Validators.required, Validators.minLength(5)]],
       password: ['', [Validators.required, Validators.pattern('^(?=.*[0-9])(?=.*[a-zA-Z])([a-zA-Z0-9])([a-zA-Z0-9*.!@#$%^&(){}|]+){6}$')]]
     })
+  }
+
+  naviageByRole(role: string) {
+
+    if (role == "ADMIN") {
+      this.router.navigateByUrl('admin');
+    }
+    else if (role == "ANALYZER") {
+      this.router.navigateByUrl('header');
+    }
+    else if (role == "INVENTORY_MANAGER") {
+      this.router.navigateByUrl('inventory_manager');
+    }
+    else if (role == "CASH_COLLECTOR") {
+      this.router.navigateByUrl('header');
+    }
+  }
+
+  logincheck() {
+
+    if (this.authService.isAuthenticated) {
+      let role = this.localStorageService.retrieve("role");
+      this.naviageByRole(role);
+    }
   }
 
   get addressLine1() {
@@ -77,7 +104,7 @@ export class SignupComponent implements OnInit {
     this.phoneNumbers.push(this.phoneNumberObj());
   }
 
-  deletePhoneNumber(i) {
+  deletePhoneNumber(i: number) {
     this.phoneNumbers.removeAt(i);
   }
 
