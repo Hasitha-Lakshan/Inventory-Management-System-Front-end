@@ -1,6 +1,6 @@
 <br><br>
 
-<div class="container custom-control custom-switch dropdown dropright">
+<div class="container custom-control custom-switch dropdown dropright mr-5 ">
   <div id="accordion">
 
     <p *ngIf="datasaved" class="alert alert-success">Successfully registered!</p>
@@ -8,7 +8,8 @@
     <p *ngIf="dataupdate" class="alert alert-success">Successfully updated!</p>
 
     <!-- Create a new lorry -->
-    <div class="formcard card text-white bg-primary mb-3">
+    <div class="container mt-5 mx-5">
+    <div class="formcard card text-white bg-primary mb-3 mx-5 ">
       <div class="card-header">
         <a class="card-link text-white " data-toggle="collapse" href="#collapseOne">
           <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping">
@@ -24,17 +25,26 @@
                   <label for="inputFname">Driver's First Name</label>
                   <input formControlName="firstName" type="text" class="form-control" id="inputFname" name="fName"
                     placeholder="First Name">
+                    <span class="form-text text-danger" *ngIf="firstName.errors?.required && firstName.touched">
+                      Driver's First Name is required!
+                  </span>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputLname">Driver's Last Name</label>
                   <input formControlName="lastName" type="text" class="form-control" id="inputLname" name="lName"
                     placeholder="Last Name">
+                    <span class="form-text text-danger" *ngIf="lastName.errors?.required && lastName.touched">
+                      Driver's Last Name is required!
+                  </span>
                 </div>
               </div>
               <div class="form-group">
                 <label for="inputTp">Contact Number</label>
                 <input formControlName="phonenumber" type="text" class="form-control" id="inputTp"
                   placeholder="Required Field">
+                  <span class="form-text text-danger" *ngIf="phonenumber.invalid && phonenumber.touched">
+                    Phone number must contains 10 numbers!
+                </span>
               </div>
               <div class="text-center">
                 <button class="btn btn-primary" type="submit" value="Submit">Submit</button>
@@ -44,9 +54,11 @@
         </div>
       </div>
     </div>
+    </div>
 
     <!-- Get lorries from the database -->
-    <div *ngFor="let lorry of forms" class="formcard card text-white bg-primary mb-1 ">
+    <div class="container mx-5">
+    <div *ngFor="let lorry of forms" class="formcard card text-white bg-primary mb-1 mx-5">
       <div class="card-header ">
         <a class="collapsed card-link text-white" data-toggle="collapse" href="#lorry{{ lorry.id }}">
           <img src="assets/Icons/local_shipping-24px.svg" alt="localShipping">
@@ -62,17 +74,26 @@
                   <label for="inputFname">Driver's First Name</label>
                   <input [formControl]="lorry.form.controls.firstName" type="text" class="form-control" id="inputFname"
                     placeholder="First Name">
+                    <span class="form-text text-danger" *ngIf="lorry.form.controls.firstName.errors?.required && lorry.form.controls.firstName.touched">
+                      Driver's First Name is required!
+                  </span>
                 </div>
                 <div class="form-group col-md-6">
                   <label for="inputLname">Driver's Last Name</label>
                   <input [formControl]="lorry.form.controls.lastName" type="text" class="form-control" id="inputLname"
                     placeholder="Last Name">
+                    <span class="form-text text-danger" *ngIf="lorry.form.controls.lastName.errors?.required && lorry.form.controls.lastName.touched">
+                      Driver's Last Name is required!
+                  </span>
                 </div>
               </div>
               <div class="form-group ">
                 <label for="inputTp">Contact Number</label>
                 <input [formControl]="lorry.form.controls.phonenumber" type="text" class="form-control" id="inputTp"
                   placeholder="Required Field">
+                  <span class="form-text text-danger" *ngIf="lorry.form.controls.phonenumber.invalid && lorry.form.controls.phonenumber.touched">
+                    Phone number must contains 10 numbers!
+                </span>
               </div>
               <div class="form-group ">
                 <input [formControl]="lorry.form.controls.accountStatus" type="checkbox">
@@ -88,4 +109,5 @@
     </div>
 
   </div>
+</div>
 </div>

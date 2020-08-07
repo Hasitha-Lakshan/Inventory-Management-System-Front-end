@@ -23,12 +23,23 @@ export class ManageComponent implements OnInit {
   ngOnInit(): void {
 
     this.setLorry = this.formbuilder.group({
-      firstName: [''],
-      lastName: [''],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       phonenumber: ['', [Validators.required, Validators.pattern('[0][1-9][0-9]{8}')]]
     })
 
     this.getLorries();
+  }
+
+  get firstName() {
+    return this.setLorry.get('firstName');
+  }
+
+  get lastName() {
+    return this.setLorry.get('lastName');
+  }
+  get phonenumber() {
+    return this.setLorry.get('phonenumber');
   }
 
   submitLorryData() {
