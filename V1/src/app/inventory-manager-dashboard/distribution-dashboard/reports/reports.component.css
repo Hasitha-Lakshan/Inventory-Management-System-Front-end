@@ -1,7 +1,8 @@
-.margin-left2{
-    width: 70%;
+.btn {
+    border-radius: 0px;
+    height: 50px;
 }
 
-.btn{
-    border-radius: 0 ;
+.content {
+    width: 54%;
 }
