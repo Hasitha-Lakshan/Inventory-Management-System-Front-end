@@ -7,18 +7,16 @@ import { Observable } from 'rxjs';
 })
 export class EmployeeDetailsService {
 
-  constructor(private http : HttpClient) { 
+  private url = "http://localhost:8080/api/analyzer/";
 
+  constructor(private http: HttpClient) { }
+
+  get_employees(): Observable<any> {
+    return this.http.get(this.url + "employees");
   }
 
- get_employees():Observable<any>
-  {
-    return this.http.get( "http://localhost:8080/api/analyzer/employees");
-  }
-
-  getEmployeeById(userID)
-  {
-    return this.http.get("http://localhost:8080/api/analyzer/employee/"+userID);
+  getEmployeeById(userID: number) {
+    return this.http.get(this.url + "employee/" + userID);
   }
 
 }
