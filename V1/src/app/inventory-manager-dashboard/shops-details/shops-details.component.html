@@ -21,48 +21,56 @@
 </nav> -->
 
 <br><br> <!--search shop-->
-
-<div class="container">
-  <div class="row">
-    <div class="col-lg-3 offset-7">
-      <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search Shops.." name="shopName" [(ngModel)]="shopName"/>
-        <div class="input-group-append">
-          <button class="btn btn-primary"  (click)="findShop()"><img class="image1" src="../../../assets/Icons/Icons/search-13-32.jpg"> </button>
+<div *ngIf="shops.length">
+    <div class="container ">
+      <div class="row">
+        <div class="col-lg-3 offset-7">
+          <div class="input-group mb-3"  >
+            <input type="text" class="form-control" placeholder="Search Shops.." name="shopName" [(ngModel)]="shopName" />
+              <div class="input-group-append " >
+                <button class="btn btn-primary"   (click)="findShop()" ><img class="image1" src="../../../assets/Icons/Icons/search-13-32.jpg"> </button>        
+              </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
 </div>
+<!--<ng-template #noContent>No matching result...</ng-template>-->
 
 <br><br><!--shop details table-->
-<div class="container">
-    <div class="row">
-      <div class="col-lg-10 offset-1">
-          <table class="table table-bordered  ">
-            <thead class="p-3 mb-2 bg-primary text-white">
-              <tr>
-                <th scope="col-md-2">shopID</th>
-                <th scope="col-md-2">shopName</th>
-                <th scope="col-md-2">ownerFName</th>
-                <th scope="col-md-2">ownerLName</th>
-                <th scope="col-md-2">address</th>
-                <th scope="col-md-2">phoneNumber</th>
-              </tr>
-            </thead>
-            <tbody>
-              
-              <tr class="thead-light" *ngFor="let shop of shops">
-                <th style="font-weight:normal">{{shop.shopID}}</th>
-                <th style="font-weight:normal">{{shop.shopName}}</th>
-                <th style="font-weight:normal">{{shop.ownerFName}}</th>
-                <th style="font-weight:normal">{{shop.ownerLName}}</th>
-                <th style="font-weight:normal">{{shop.address}}</th>
-                <th style="font-weight:normal">{{shop.phoneNumber}}</th>
-              </tr>
-  
-            </tbody>
-          </table>
+   <div class="container">
+      <div class="row">
+        <div class="col-lg-10 offset-1">
+           <div div *ngIf="shops.length; else noRecord">
+              <table class="table table-bordered"  >
+                <thead class="p-3 mb-2 bg-primary text-white">
+                  <tr>
+                    <th scope="col-md-2">shopID</th>
+                    <th scope="col-md-2">shopName</th>
+                    <th scope="col-md-2">ownerFName</th>
+                    <th scope="col-md-2">ownerLName</th>
+                    <th scope="col-md-2">address</th>
+                    <th scope="col-md-2">phoneNumber</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  <tr class="thead-light" *ngFor="let shop of shops">
+                    <th style="font-weight:normal">{{shop.shopID}}</th>
+                    <th style="font-weight:normal">{{shop.shopName}}</th>
+                    <th style="font-weight:normal">{{shop.ownerFName}}</th>
+                    <th style="font-weight:normal">{{shop.ownerLName}}</th>
+                    <th style="font-weight:normal">{{shop.address}}</th>
+                    <th style="font-weight:normal">{{shop.phoneNumber}}</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <ng-template #noRecord>
+              <div class="error col-md-10 offset-3">
+                 <h1>No Records found</h1>
+              </div>
+             </ng-template>
         </div>
       </div>
     </div>

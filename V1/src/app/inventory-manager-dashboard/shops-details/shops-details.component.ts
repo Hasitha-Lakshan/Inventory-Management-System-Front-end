@@ -8,6 +8,7 @@ import { ShopServiceService } from '../../services/shop-service.service';
   styleUrls: ['./shops-details.component.css']
 })
 export class ShopsDetailsComponent implements OnInit {
+  
   shops :any;
   shopName:string;
   constructor(private service:ShopServiceService) { }
@@ -16,6 +17,7 @@ export class ShopsDetailsComponent implements OnInit {
     let resp=this.service.getShopByName(this.shopName);
     resp.subscribe((data)=>this.shops=data);
   }
+  
 
   ngOnInit(): void {
     let resp=this.service.getAllShops();
@@ -23,3 +25,4 @@ export class ShopsDetailsComponent implements OnInit {
   }
 
 }
+
