@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Shops } from '../shops-details/shop'
 import { ShopServiceService } from '../../services/shop-service.service';
 
 @Component({
@@ -8,6 +8,7 @@ import { ShopServiceService } from '../../services/shop-service.service';
   styleUrls: ['./shops-details.component.css']
 })
 export class ShopsDetailsComponent implements OnInit {
+  
   shops :any;
   shopName:string;
   constructor(private service:ShopServiceService) { }

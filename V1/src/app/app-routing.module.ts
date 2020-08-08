@@ -10,14 +10,13 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
-import { EmployeeDetailsComponent } from './inventory-manager-dashboard/employee-details/employee-details.component';
 import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component';
 import { ReportsComponent } from './inventory-manager-dashboard/distribution-dashboard/reports/reports.component';
 import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-dashboard/new-loading/new-loading.component';
 import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component';
 import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
-import{AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
-import{EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
+import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
 import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
 
 
