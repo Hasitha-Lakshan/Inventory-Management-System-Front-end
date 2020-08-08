@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetreportService } from '../../services/getreport.service';
+import { InvoiceService } from '../../services/invoice.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import {Data} from '../datafilter/datafilter.component'
 
@@ -14,7 +14,7 @@ export class UpdateReportComponent implements OnInit {
   data: Data
 
   constructor(
-    private reportService: GetreportService,
+    private reportService: InvoiceService,
     private route: ActivatedRoute,
     private router: Router
   ) { }

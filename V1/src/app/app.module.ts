@@ -21,7 +21,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import {MatNativeDateModule} from '@angular/material/core';
 import { MenuComponent } from './invoice-report/menu/menu.component';
 import { DatafilterComponent } from './invoice-report/datafilter/datafilter.component';
-import { GetreportService } from './services/getreport.service';
+import { InvoiceService } from './services/invoice.service';
 import { UpdateReportComponent } from './invoice-report/update-report/update-report.component'
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';

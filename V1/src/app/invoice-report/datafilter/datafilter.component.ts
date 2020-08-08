@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { GetreportService } from '../../services/getreport.service';
+import { InvoiceService } from '../../services/invoice.service';
 import { Router } from '@angular/router';
 
 
@@ -56,7 +56,7 @@ report: Data;
 
 
   constructor(
-    private dataService: GetreportService,
+    private dataService: InvoiceService,
     private router: Router
     ) { }
 
