@@ -47,6 +47,10 @@ This application is created for the front-end of a web-based Inventory Managemen
    ```
    npm install --save ngx-webstorage
    ```
+   * Installing JwtHelperService:
+   ```
+   npm install --save @auth0/angular-jwt
+   ```
    * Fix the bad dependencies:
    ```
    npm audit fix --force

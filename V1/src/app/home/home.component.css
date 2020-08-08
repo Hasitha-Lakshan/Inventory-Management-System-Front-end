@@ -1,13 +1,17 @@
-.button{
-    border-bottom-left-radius: 25% !important;
-    border-top-right-radius: 25% !important;;
-    height: 200px;
-    width: 200px;
-    font-size: 24px;
-}
-
 h1{
     border: solid 1px white;
     display: inline-block;
     padding: 20px;
+}
+
+.button{
+    border-bottom-left-radius: 25% !important;
+    border-top-right-radius: 25% !important;;
+    height: 200px;
+    width: 250px;
+    font-size: 24px;
+}
+
+.button img {
+    height: 50px;
 }

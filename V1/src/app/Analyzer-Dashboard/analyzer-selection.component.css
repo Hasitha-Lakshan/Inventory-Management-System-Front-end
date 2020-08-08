@@ -1,0 +1,11 @@
+.button{
+    border-bottom-left-radius: 25% !important;
+    border-top-right-radius: 25% !important;;
+    height: 200px;
+    width: 250px;
+    font-size: 24px;
+}
+
+.button img {
+    height: 50px;
+}

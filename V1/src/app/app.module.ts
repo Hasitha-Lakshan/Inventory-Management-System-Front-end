@@ -3,13 +3,16 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import {Ng2SearchPipeModule} from 'ng2-search-filter'
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxWebstorageModule } from 'ngx-webstorage'
+import { JwtModule } from "@auth0/angular-jwt";
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import { MatTableModule } from '@angular/material/table';
-// import { MatPaginatorModule } from '@angular/material/paginator';
+// import { MatPaginatorModule } from '@angular/material/paginator';s
 // import { MatSortModule } from '@angular/material/sort';
 // import {MatFormFieldModule} from '@angular/material/form-field';
 // import {MatInputModule} from '@angular/material/input';
@@ -18,22 +21,30 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // import {MatNativeDateModule} from '@angular/material/core';
 import { MenuComponent } from './invoice-report/menu/menu.component';
 import { DatafilterComponent } from './invoice-report/datafilter/datafilter.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { GetreportService } from './services/getreport.service';
 import { UpdateReportComponent } from './invoice-report/update-report/update-report.component'
-
-
-import { NgxWebstorageModule } from 'ngx-webstorage'
-
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
-import { HttpClientInterceptor } from './http-client-interceptor';
+import { HttpClientInterceptor } from './security/http-client-interceptor';
 import { HeaderComponent } from './header/header.component';
+import { AuthGuard } from './security/auth.guard';
+import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
+import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component'
+import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-dashboard/new-loading/new-loading.component'
+import { ReportsComponent } from './inventory-manager-dashboard/distribution-dashboard/reports/reports.component'
+import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component'
+import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection.component';
+import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
+import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
 
+export function tokenGetter() {
+  return localStorage.getItem("authenticationToken");
+}
 
 @NgModule({
   declarations: [
@@ -49,7 +60,18 @@ import { HeaderComponent } from './header/header.component';
     AppComponent,
     MenuComponent,
     DatafilterComponent,
-    UpdateReportComponent
+    UpdateReportComponent,
+    routingComponents,
+    InventoryManagerSelectionsComponent,
+    ShopsDetailsComponent,
+    NewLoadingComponent,
+    ReportsComponent,
+    ManageComponent,
+    DistributionDashboardComponent,
+    AnalyzerSelectionComponent,
+    AnalyzerReportsComponent,
+    EmployeeDetailsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -61,11 +83,17 @@ import { HeaderComponent } from './header/header.component';
     Ng2SearchPipeModule,
     ReactiveFormsModule,
     HttpClientModule,
-    BrowserModule,
     NgxWebstorageModule.forRoot(),
-    AppRoutingModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem("authenticationToken");
+        },
+      }
+    }),
   ],
-  providers: [{provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true},GetreportService],
+  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }
