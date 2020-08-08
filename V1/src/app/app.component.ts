@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import {AppRoutingModule} from './app-routing.module'; 
+import {AppRoutingModule} from './app-routing.module';
+
 
 @Component({
   selector: 'app-root',
@@ -8,5 +9,4 @@ import {AppRoutingModule} from './app-routing.module';
 })
 export class AppComponent {
   title = 'V1';
-
 }
