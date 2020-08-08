@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Employees } from '../Analyzer-Dashboard/employees';
-import { Phone } from '../Analyzer-Dashboard/phone';
 
 @Injectable({
   providedIn: 'root'

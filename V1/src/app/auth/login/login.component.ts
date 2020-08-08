@@ -49,7 +49,7 @@ export class LoginComponent implements OnInit {
       this.router.navigateByUrl('admin');
     }
     else if (role == "ANALYZER") {
-      this.router.navigateByUrl('header');
+      this.router.navigateByUrl('analyzer_dashboard');
     }
     else if (role == "INVENTORY_MANAGER") {
       this.router.navigateByUrl('inventory_manager');
