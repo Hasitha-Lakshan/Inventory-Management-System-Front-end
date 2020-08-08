@@ -1,7 +1,5 @@
 <app-header></app-header>
-<!--nav bar-->
-<!-- <nav class="navbar navbar-expand-sm bg-primary navbar-dark">
-
+<!--<nav>
     <ul class="navbar-nav">
       <li class="nav-item active margin-left1">
         <a class="nav-link ml-5 mx-5 pl-5 margin-left1" [routerLink]="['/home']">
@@ -31,9 +29,21 @@
                 <button class="btn btn-primary"   (click)="findShop()" ><img class="image1" src="../../../assets/Icons/Icons/search-13-32.jpg"> </button>        
               </div>
           </div>
+<br><br>
+<!--search shop-->
+<div *ngIf="shops.length">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-lg-3">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Shop Name..." name="shopName" [(ngModel)]="shopName" />
+          <div class="input-group-append">
+            <button class="btn btn-primary" (click)="findShop()"><img class="image1"
+                src="../../../assets/Icons/Icons/search.png"> </button>
+          </div>
         </div>
       </div>
-    </div>
+  </div>
 </div>
 <!--<ng-template #noContent>No matching result...</ng-template>-->
 
@@ -45,12 +55,12 @@
               <table class="table table-bordered"  >
                 <thead class="p-3 mb-2 bg-primary text-white">
                   <tr>
-                    <th scope="col-md-2">shopID</th>
-                    <th scope="col-md-2">shopName</th>
-                    <th scope="col-md-2">ownerFName</th>
-                    <th scope="col-md-2">ownerLName</th>
-                    <th scope="col-md-2">address</th>
-                    <th scope="col-md-2">phoneNumber</th>
+                    <th scope="col-md-2">Shop ID</th>
+                    <th scope="col-md-2">Shop Name</th>
+                    <th scope="col-md-2">Owner's First Name</th>
+                    <th scope="col-md-2">Owner's Last Name</th>
+                    <th scope="col-md-2">Address</th>
+                    <th scope="col-md-2">Phone Number</th>
                   </tr>
                 </thead>
                 <tbody>
