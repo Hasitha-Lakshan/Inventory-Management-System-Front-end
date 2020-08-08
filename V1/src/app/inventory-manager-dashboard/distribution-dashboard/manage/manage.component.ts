@@ -52,7 +52,7 @@ export class ManageComponent implements OnInit {
       if (data) {
         this.datasaved = true;
         this.datanotsaved = false;
-        this.ngOnInit()
+        this.setLorry.reset();
       }
     }, error => {
       this.datasaved = false;
@@ -92,7 +92,6 @@ export class ManageComponent implements OnInit {
 
     this.lorryService.updateLorry(this.updateLorry).subscribe(res => {
       this.dataupdate = true;
-      this.ngOnInit();
     })
   }
 }
