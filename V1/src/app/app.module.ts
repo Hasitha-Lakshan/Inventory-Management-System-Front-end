@@ -23,11 +23,17 @@ import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-
 import { ReportsComponent } from './inventory-manager-dashboard/distribution-dashboard/reports/reports.component'
 import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component'
 import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
+import { NavBarComponent } from './Analyzer-Dashboard/nav-bar/nav-bar.component';
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
 }
 
+
+import {HttpClientModule} from '@angular/common/http';
+import {FormsModule} from '@angular/forms';
+import {EmployeeDetailsService} from './Service/employee-details.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +53,9 @@ export function tokenGetter() {
     ReportsComponent,
     ManageComponent,
     DistributionDashboardComponent,
-  
+    AnalyzerSelectionComponent,
+    NavBarComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -65,6 +73,7 @@ export function tokenGetter() {
     }),
   ],
   providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

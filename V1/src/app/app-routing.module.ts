@@ -16,6 +16,9 @@ import { ReportsComponent } from './inventory-manager-dashboard/distribution-das
 import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-dashboard/new-loading/new-loading.component';
 import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component';
 import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
+import{AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
+import{EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
 
 
 const routes: Routes = [
@@ -42,6 +45,10 @@ const routes: Routes = [
       { path: 'manage', component: ManageComponent }],
     canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' }
   },
+    // Analyzer paths
+  {path:'analyzer', component:AnalyzerSelectionComponent},
+  {path:'report',component: AnalyzerReportsComponent},
+  {path:'details',component:EmployeeDetailsComponent },
   // Auto Redirection for Unknown paths
   { path: '**', redirectTo: '' }
 ];
@@ -51,4 +58,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [InventoryManagerSelectionsComponent, EmployeeDetailsComponent, ShopsDetailsComponent]
+export const routingComponents = [AnalyzerReportsComponent, InventoryManagerSelectionsComponent, EmployeeDetailsComponent, ShopsDetailsComponent]
