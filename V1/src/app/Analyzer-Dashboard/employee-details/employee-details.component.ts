@@ -30,11 +30,8 @@ firstName :String
   search()
   {
    
-    
     this.filterId = this.employee;
-    
-
- 
+  
     var matchData = []
     this.tool=true
     this.filterId.forEach(data=>{

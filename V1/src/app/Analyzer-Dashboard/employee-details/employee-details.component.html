@@ -56,9 +56,10 @@
                     <th>Address Line1</th>
                     <th>Address Line2</th>
                     <th>Address Line3</th>
-                    <th>Phone 1</th>
-                    <th>Phone 2</th>
-                    
+                    <th>Phone Type 1</th>
+                    <th>Phone Number 1</th>
+                    <th>Phone Type 2</th>
+                    <th>Phone Number 2</th>
                     
                     
                   </tr>
@@ -74,8 +75,12 @@
                     <td >{{lstEmp.addressLine1}}</td>
                     <td >{{lstEmp.addressLine2}}</td>
                     <td  >{{lstEmp.addressLine3}}</td>
+                    <td>{{lstEmp.phoneNumbers[0]?.phoneType}}</td>
+                    <td>{{lstEmp.phoneNumbers[0]?.phoneNumber}}</td>
+                    <td>{{lstEmp.phoneNumbers[1]?.phoneType}}</td>
+                    <td>{{lstEmp.phoneNumbers[1]?.phoneNumber}}</td>
                    
-                   <td  *ngFor = "let emp of lstEmp.phoneNumbers">{{emp.phoneType}}:{{emp.phoneNumber}}</td>
+                   <!--<td  *ngFor = "let emp of lstEmp.phoneNumbers">{{emp.phoneType}}:{{emp.phoneNumber}}</td>-->
                   </tr>
             
                 </tbody>
