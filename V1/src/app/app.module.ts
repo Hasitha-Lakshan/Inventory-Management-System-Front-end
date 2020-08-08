@@ -31,8 +31,6 @@ export function tokenGetter() {
 }
 
 
-import {HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
 import {EmployeeDetailsService} from './Service/employee-details.service';
 @NgModule({
   declarations: [

@@ -17,7 +17,7 @@ import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-
 import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component';
 import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
 import{AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
-import{EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+
 import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
 
 
