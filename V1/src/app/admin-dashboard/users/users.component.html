@@ -9,7 +9,8 @@
             <th scope="col">ADDRESS LINE 1</th>
             <th scope="col">ADDRESS LINE 2</th>
             <th scope="col">ADDRESS LINE 3</th>
-            <th scope="col">ACCOUNT STATUS</th>
+            <th scope="col">PHONE</th>
+            
         </tr>
 
 
@@ -131,8 +132,19 @@
             <th>{{user.role}}</th>
             <th>{{user.firstName}}</th>
             <th>{{user.lastName}}</th>
-            <th>{{user.address3}}</th>
-            <th>{{user.accountStatus}}</th>
+            <th>{{user.addressLine1}}</th>
+            <th>{{user.addressLine2}}</th>
+            <th>{{user.addressLine3}}</th>
+            <th *ngFor="let phone of user.phoneNumbers">
+
+                <div>
+                    {{phone.phoneType}} {{phone.phoneNumber}}<br>
+                   
+                </div>
+           
+            </th>
+           
+
 
 
 

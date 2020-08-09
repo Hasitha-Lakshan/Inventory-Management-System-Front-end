@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl,Validators } from '@angular/forms';
 import{UpdateUserPaylord} from '../updateUserPaylord';
 import {UserPaylord} from '../usersPaylord';
 import {AdminserviceService} from '../../services/adminservice.service'
 import { Observable } from 'rxjs';
+import { PhoneNumber } from 'src/app/auth/signup/phone-number';
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -12,40 +13,49 @@ import { Observable } from 'rxjs';
 
 export class UsersComponent implements OnInit {
  
-  updateUserPaylord:UpdateUserPaylord;
-  users:Observable<Array<UserPaylord>>;
-  updateForm = new FormGroup({
-    firstname:new FormControl(''),
-    lastname:new FormControl(''),
-    role: new FormControl(''),
-    addressline1:new FormControl(''),
-    addressline2:new FormControl(''),
-    addressline3:new FormControl(''),
-    username:new FormControl('')
-    
-  }); 
+ 
+  users:any
+  updateForm:FormGroup
+ 
   
 
  
-  constructor( private adminserviceService:AdminserviceService) {
+  constructor( private adminserviceService:AdminserviceService,private fb:FormBuilder) {
   
     
    
   }
 
   ngOnInit(): void {
-    this.users=this.adminserviceService.getAllUsers();
-        
+    this.adminserviceService.getAllUsers().subscribe(data=>{
+      this.users=data
+      console.log(this.users)
+    },error=>{
+
+    }
+    )
+
+    
+    this.updateForm=this.fb.group({
+      
+      firstname:[''],
+      lastname:[''],
+      role:[''],
+      addressline1:[''],
+      addressline2:[''],
+      addressline3:[''],
+      username:[''],
+      
+
+    });
     
     
   }
   onSubmit(){
-    this.adminserviceService.updateUser(this.updateForm.value).subscribe(data=>{
-      console.log(data)
-    },error=>{
-      alert("update unsuccessful")
-    }
-    )
+  
+
+      console.log("update method")
+   
 
     
   }
