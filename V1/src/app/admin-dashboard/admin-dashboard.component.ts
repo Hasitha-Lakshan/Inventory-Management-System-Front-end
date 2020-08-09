@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms';
 import { AdminserviceService } from '../services/adminservice.service';
 @Component({
   selector: 'app-admin-dashboard',
@@ -11,21 +11,18 @@ export class AdminDashboardComponent implements OnInit {
   statusForm: FormGroup;
   deleteForm: FormGroup;
 
-  constructor(private adminserviceService: AdminserviceService) { }
+  constructor(private adminserviceService: AdminserviceService,private fb:FormBuilder ) { }
 
   ngOnInit(): void {
-
-    this.statusForm = new FormGroup({
-
-      username: new FormControl(''),
-      accountStatus: new FormControl('')
-
-
+    this.statusForm=this.fb.group({
+      username:[''],
+      accountStatus:['']
     });
+  
 
     this.deleteForm = new FormGroup({
 
-      username: new FormControl('')
+      username: new FormControl('',Validators.required)
 
     });
   }
