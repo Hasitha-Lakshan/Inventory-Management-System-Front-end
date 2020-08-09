@@ -36,3 +36,8 @@
     color: #007bff;
     background-color: #e9ecef;
 }
+
+.alert-danger
+{
+    text-align: center;
+}
