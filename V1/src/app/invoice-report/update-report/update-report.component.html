@@ -1,10 +1,15 @@
-<div class="container">
-    <h1>Update Invoice Data</h1>
+<app-header></app-header>
+<div class="container mt-5 mb-5 p-4 col-lg-6 border border-primary">
+    <div class="row row-cols-1 bg-primary text-white shadow text-center p-3">
+ 
+  <h1 class="py-2">Update Invoice Report</h1>
+  
+</div>
     <div class="form-group">
       
       <fieldset class="form-group">
       <label for="">Invoice Id</label>
-      <input type="text" [(ngModel)]="data.invoiceId" class="form-control" name="invoiceId" id="" placeholder="Invoice id">
+      <input disabled type="text" [(ngModel)]="data.invoiceId" class="form-control" name="invoiceId" id="" placeholder="Invoice id">
       </fieldset>
     <fieldset class="form-group">
       <label for="">Shop Name</label>
@@ -12,7 +17,7 @@
     </fieldset>
 <fieldset class="form-group">
       <label for="">Issued Date</label>
-      <input type="date" [ngModel]="data.issuedDate | date:'yyy-MM-dd'" (ngModelChange)="data.issuedDate = $event" class="form-control" name="startDate" id="" placeholder="Startng Date">
+      <input type="date" [ngModel]="data.issuedDate | date:'yyy-MM-dd'" (ngModelChange)="data.issuedDate = $event" class="form-control" name="startDate" id="" placeholder="Startng Date" disabled>
           </fieldset>
 
 
@@ -24,7 +29,7 @@
 
       <fieldset class="form-group">
       <label for="">Status</label>
-      <input type="text" [(ngModel)]="data.status" class="form-control" name="status" id="" placeholder="Status">
+      <input type="text" [(ngModel)]="data.status" class="form-control" name="status" id="" placeholder="Status" disabled>
           </fieldset>
 
 
@@ -48,7 +53,7 @@
 
       <fieldset class="form-group">
       <label for="">Credits</label>
-      <input type="text" [(ngModel)]="data.credits" class="form-control" name="credits" id="" placeholder="Credits">
+      <input type="text" [(ngModel)]="data.credits" class="form-control" name="credits" id="" placeholder="Credits" disabled>
      </fieldset>
 
     

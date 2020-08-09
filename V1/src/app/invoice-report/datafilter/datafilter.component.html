@@ -1,4 +1,9 @@
-<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #2F89F7;">
+<app-header></app-header>
+
+<app-menu></app-menu>
+
+<div class="container mt-5 mb-5 p-4 col-lg-8 border border-primary">
+<nav class="navbar navbar-expand-md navbar-dark" style="background-color: #0978F7;">
 
    <ul class="navbar-nav navbar-collapse justify-content-end"> 
     <li>
@@ -36,11 +41,11 @@
         </select>
     </ul>
      <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
-        <li class=""><label>Start Time :  </label></li>
+        <li class=""><label class="lb">Start Time :  </label></li>
         <li><input type="date" class="form-control" id="exampleFormControlInput1" [ngModel]="startDate | date:'yyy-MM-dd'" (ngModelChange)="startDate = $event" > </li>
     </ul>
     <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
-        <li class=""><label>End Time :  </label></li>
+        <li class=""><label class="lb">End Time :  </label></li>
         <li><input type="date" class="form-control" id="exampleFormControlInput1" [ngModel]="endDate | date:'yyy-MM-dd'" (ngModelChange)="endDate = $event"> </li>
     </ul>
     <ul class="navbar-nav navbar-collapse justify-content-end"> 
@@ -58,24 +63,24 @@
 
     
     <table class="table">
-    <thead style="background-color: #2F89F7;">
+    <thead style="background-color: #0978F7;">
         <tr>
-            <th scope="col">Invoice Name</th>
-            <th scope="col">Shop Name</th>
-            <th scope="col">Issue Date</th>
-            <th scope="col">Expire Date</th>
-            <th scope="col">Status</th>
-            <th scope="col">Value</th>
-             <th scope="col">check</th>
-            <th scope="col">cash</th>
-            <th scope="col">credits</th>
-            <th scope="col">Update</th>
+            <th class="cl" scope="col">Invoice Name</th>
+            <th  class="cl" scope="col">Shop Name</th>
+            <th class="cl" scope="col">Issue Date</th>
+            <th class="cl" scope="col">Expire Date</th>
+            <th class="cl" scope="col">Status</th>
+            <th class="cl" scope="col">Value</th>
+             <th class="cl" scope="col">check</th>
+            <th class="cl" scope="col">cash</th>
+            <th class="cl" scope="col">credits</th>
+            <th class="cl" scope="col">Update</th>
                 
             
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let d of data"> 
+        <tr *ngFor="let d of data | filter:shopName"> 
           <td> {{d.invoiceId}}</td>
           <td>{{d.shopName}}</td>
           <td>{{d.issuedDate | date}}</td>
@@ -92,3 +97,5 @@
        
     </tbody>
 </table>
+
+</div>

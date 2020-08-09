@@ -71,7 +71,6 @@ report: Data;
 
   filter(){
     this.isReset= true;
-    this.reset()
     console.log(this.tagType);
     console.log(this.invoiceNo);
     if(this.tagType==1){
@@ -141,7 +140,7 @@ report: Data;
   // }
 
   reset(){
-    this.tagType=-1;
+    //this.tagType=-1;
     this.dataService.getReports().subscribe(
       response => {
         console.log(response)

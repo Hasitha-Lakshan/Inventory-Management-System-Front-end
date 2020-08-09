@@ -11,14 +11,6 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-// import { MatTableModule } from '@angular/material/table';
-// import { MatPaginatorModule } from '@angular/material/paginator';s
-// import { MatSortModule } from '@angular/material/sort';
-// import {MatFormFieldModule} from '@angular/material/form-field';
-// import {MatInputModule} from '@angular/material/input';
-
-// import {MatDatepickerModule} from '@angular/material/datepicker';
-// import {MatNativeDateModule} from '@angular/material/core';
 import { MenuComponent } from './invoice-report/menu/menu.component';
 import { DatafilterComponent } from './invoice-report/datafilter/datafilter.component';
 import { InvoiceService } from './services/invoice.service';
@@ -92,7 +84,7 @@ export function tokenGetter() {
       }
     }),
   ],
-  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true },InvoiceService],
 
   bootstrap: [AppComponent]
 })

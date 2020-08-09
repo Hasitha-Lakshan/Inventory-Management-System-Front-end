@@ -1,0 +1,27 @@
+container{
+    border-radius: 0px;
+    margin:15%;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.lb{
+    color: white;
+    padding: 20px;
+    font-size: 20px;
+}
+
+.cl{
+    color: white;
+    padding: 10px;
+    font-size: 15px;
+    border-left: 2px;
+    border-color: beige;
+    border-width: 2px;
+}
+tr:hover {
+  background-color: aqua !important;
+}
+tr{
+    font-size: 15px;
+}

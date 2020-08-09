@@ -29,34 +29,87 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'header', component: HeaderComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_CASH_COLLECTOR' } },
+  {
+    path: 'header',
+    component: HeaderComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_CASH_COLLECTOR' },
+  },
   // Admin Components
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ADMIN' } },
+  {
+    path: 'admin',
+    component: AdminDashboardComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_ADMIN' },
+  },
   { path: 'newuser', component: NewuserComponent },
   { path: 'users', component: UsersComponent },
   //invoice report
-  { path: 'invoice-reports', component: DatafilterComponent },
-  {path: 'update-report/:id',component:UpdateReportComponent},
+  {
+    path: 'invoice-reports',
+    component: DatafilterComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_CASH_COLLECTOR' },
+  },
+  {
+    path: 'update-report/:id',
+    component: UpdateReportComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_CASH_COLLECTOR' },
+  },
   // Inventory Manager Components
-  { path: 'inventory_manager', component: InventoryManagerSelectionsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
-  { path: 'inventory_manager_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
-  { path: 'shop_details', component: ShopsDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
+  {
+    path: 'inventory_manager',
+    component: InventoryManagerSelectionsComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_INVENTORY_MANAGER' },
+  },
+  {
+    path: 'inventory_manager_employee_details',
+    component: EmployeeDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_INVENTORY_MANAGER' },
+  },
+  {
+    path: 'shop_details',
+    component: ShopsDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_INVENTORY_MANAGER' },
+  },
   // Inventory Manager - Distribution Components
   {
-    path: 'distribution_dashboard', component: DistributionDashboardComponent,
+    path: 'distribution_dashboard',
+    component: DistributionDashboardComponent,
     children: [
       { path: '', component: NewLoadingComponent },
       { path: 'reports', component: ReportsComponent },
-      { path: 'manage', component: ManageComponent }],
-    canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' }
+      { path: 'manage', component: ManageComponent },
+    ],
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_INVENTORY_MANAGER' },
   },
   // Analyzer Components
-  { path: 'analyzer_dashboard', component: AnalyzerSelectionComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
-  { path: 'reports', component: AnalyzerReportsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
-  { path: 'analyzer_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
+  {
+    path: 'analyzer_dashboard',
+    component: AnalyzerSelectionComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_ANALYZER' },
+  },
+  {
+    path: 'reports',
+    component: AnalyzerReportsComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_ANALYZER' },
+  },
+  {
+    path: 'analyzer_employee_details',
+    component: EmployeeDetailsComponent,
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_ANALYZER' },
+  },
 
   // Auto Redirection for Unknown paths
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
