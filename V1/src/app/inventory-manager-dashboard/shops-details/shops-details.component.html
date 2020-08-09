@@ -7,7 +7,8 @@
   <div class="row justify-content-md-center">
     <div class="col-lg-3">
       <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Shop Name..." name="shopName" [(ngModel)]="shopName" />
+        <input type="text" class="form-control" (input)="findShop()" placeholder="Shop Name..." name="shopName"
+          [(ngModel)]="shopName" />
         <div class="input-group-append">
           <button class="btn btn-primary" (click)="findShop()"><img class="image1"
               src="../../../assets/Icons/Icons/search.png"> </button>
@@ -22,7 +23,7 @@
 <div>
   <div class="row">
     <div class="col-lg-10 offset-1">
-      <table class="table table-bordered  ">
+      <table class="table table-bordered">
         <thead class="p-3 mb-2 bg-primary text-white">
           <tr>
             <th scope="col-md-2">Shop ID</th>

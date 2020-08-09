@@ -17,21 +17,24 @@ import { HttpClientInterceptor } from './security/http-client-interceptor';
 import { HeaderComponent } from './header/header.component';
 import { AuthGuard } from './security/auth.guard';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
-import { EmployeeDetailsComponent } from './inventory-manager-dashboard/employee-details/employee-details.component';
 import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component'
 import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-dashboard/new-loading/new-loading.component'
 import { ReportsComponent } from './inventory-manager-dashboard/distribution-dashboard/reports/reports.component'
 import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component'
 import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
-import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
-import { NavBarComponent } from './Analyzer-Dashboard/nav-bar/nav-bar.component';
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection.component';
+import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
+import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+
+
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
 }
 
 
-import {EmployeeDetailsService} from './Service/employee-details.service';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,14 +48,14 @@ import {EmployeeDetailsService} from './Service/employee-details.service';
     HeaderComponent,
     routingComponents,
     InventoryManagerSelectionsComponent,
-    EmployeeDetailsComponent,
     ShopsDetailsComponent,
     NewLoadingComponent,
     ReportsComponent,
     ManageComponent,
     DistributionDashboardComponent,
     AnalyzerSelectionComponent,
-    NavBarComponent,
+    AnalyzerReportsComponent,
+    EmployeeDetailsComponent
 
   ],
   imports: [
