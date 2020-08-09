@@ -1,99 +1,61 @@
+<app-header></app-header>
 
-   <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
-    <div class="collapse navbar-collapse" id="navbar NavAltMarkup">
-        <div class="col-sm-3">
-            <a class="nav-item nav-link" routerLink="Home"><img class="home-icon" src="assets\img\home-24px.svg">HOME</a>
+<br><br>
+<!--search Employee-->
+
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col-lg-3">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" name="search" (input)="search()" [(ngModel)]="searchText"
+          autocomplete="on" placeholder="Employee ID...">
+        <div class="input-group-append">
+          <button class="btn btn-primary" (click)="search()"><img class="search" src="assets\img\search-13-xl.png">
+          </button>
         </div>
-
-        <div class="col-sm-3 ">
-            <p class="navbar-text text" style="color:#fff;" id="repo"><img class="emp-img" src="assets\img\people_alt-24px.svg"> EMPLOYEES DETAILS</p>
-        </div>
-
-        <div class="col-sm-3 offset-1">
-            <p class="navbar-text text" style="color:#fff;"><img class="an-img" src="assets\img\user-solid.svg"> Analyzer</p>
-        </div>
-
-      <div class="col-sm-3">
-            <button type="button" class="btn btn-default" id="button">SIGN OUT</button>
       </div>
-
     </div>
-</nav>
+  </div>
+</div>
 
-<br>
-<br>
-<br>
-
-
+<br><br>
+<!--shop details table-->
 <div class="table-wrapper">
-  <div class="form-group col-lg-3 offset-6">
-  <div class="input-group mb-3 offset-7">
-    <input type="text" class="form-control" name="search" (input)="search()" [(ngModel)]="searchText" autocomplete="on" placeholder="Search By Id">
-    <div class="input-group-append">
-      <button class="btn btn-primary" (click)="search()"><img class="search" src="assets\img\search-13-xl.png"></button>
-    </div>
-  </div>  
- </div>
-
-
-
-<br>
-<br>
-<br>
-
-<div class="row row-content">
+  <div class="row row-content">
     <div class="col-12 col-sm-10 offset-1">
-        <div class="table-responsive">
-            <table class="table" >
-              
-                <thead >
-                  <tr *ngIf="tool">
-                    
-                    <th>User Id</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Role</th>
-                    <th>Address Line1</th>
-                    <th>Address Line2</th>
-                    <th>Address Line3</th>
-                    <th>Phone Type 1</th>
-                    <th>Phone Number 1</th>
-                    <th>Phone Type 2</th>
-                    <th>Phone Number 2</th>
-                    
-                    
-                  </tr>
-                </thead>
-                <tbody *ngFor="let lstEmp of lstEmp ; let i = index" >
-                  
-                  <tr>
-                  
-                    <td  >{{lstEmp.userID}}</td>
-                    <td >{{lstEmp.firstName}}</td>
-                    <td >{{lstEmp.lastName}}</td>
-                    <td  >{{lstEmp.role}}</td>
-                    <td >{{lstEmp.addressLine1}}</td>
-                    <td >{{lstEmp.addressLine2}}</td>
-                    <td  >{{lstEmp.addressLine3}}</td>
-                    <td>{{lstEmp.phoneNumbers[0]?.phoneType}}</td>
-                    <td>{{lstEmp.phoneNumbers[0]?.phoneNumber}}</td>
-                    <td>{{lstEmp.phoneNumbers[1]?.phoneType}}</td>
-                    <td>{{lstEmp.phoneNumbers[1]?.phoneNumber}}</td>
-                   
-                   <!--<td  *ngFor = "let emp of lstEmp.phoneNumbers">{{emp.phoneType}}:{{emp.phoneNumber}}</td>-->
-                  </tr>
-            
-                </tbody>
-
-
-              </table>
-
-        </div>
-        <div class="col-4 offset-3">
-        <div class="alert alert-danger" role="alert" *ngIf ="!tool">
-          Employee Not Found!
-        </div>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr *ngIf="tool">
+              <th>User ID</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Role</th>
+              <th>Address</th>
+              <th>Phone Type</th>
+              <th>Phone Number</th>
+              <th>Phone Type</th>
+              <th>Phone Number</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let lstEmp of lstEmp ; let i = index">
+            <tr>
+              <td>{{lstEmp.userID}}</td>
+              <td>{{lstEmp.firstName}}</td>
+              <td>{{lstEmp.lastName}}</td>
+              <td>{{lstEmp.role}}</td>
+              <td>{{lstEmp.addressLine1 +', '+ lstEmp.addressLine2 +', '+ lstEmp.addressLine3 +'.'}}</td>
+              <td>{{lstEmp.phoneNumbers[0]?.phoneType}}</td>
+              <td>{{lstEmp.phoneNumbers[0]?.phoneNumber}}</td>
+              <td>{{lstEmp.phoneNumbers[1]?.phoneType}}</td>
+              <td>{{lstEmp.phoneNumbers[1]?.phoneNumber}}</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-    </div>  
+      <div class="alert alert-danger" role="alert" *ngIf="!tool">
+        Employee Not Found!
+      </div>
+    </div>
   </div>
 </div>

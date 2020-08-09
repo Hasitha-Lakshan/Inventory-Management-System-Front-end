@@ -15,9 +15,10 @@ import { ReportsComponent } from './inventory-manager-dashboard/distribution-das
 import { NewLoadingComponent } from './inventory-manager-dashboard/distribution-dashboard/new-loading/new-loading.component';
 import { ManageComponent } from './inventory-manager-dashboard/distribution-dashboard/manage/manage.component';
 import { DistributionDashboardComponent } from './inventory-manager-dashboard/distribution-dashboard/distribution-dashboard.component';
+
+import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection.component';
 import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
 import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
-import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection/analyzer-selection.component';
 
 
 const routes: Routes = [
@@ -26,14 +27,14 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'header', component: HeaderComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
+  { path: 'header', component: HeaderComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_CASH_COLLECTOR' } },
   // Admin Components
   { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ADMIN' } },
   { path: 'newuser', component: NewuserComponent },
   { path: 'users', component: UsersComponent },
   // Inventory Manager Components
   { path: 'inventory_manager', component: InventoryManagerSelectionsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
-  { path: 'employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
+  { path: 'inventory_manager_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'shop_details', component: ShopsDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   // Inventory Manager - Distribution Components
   {
@@ -44,10 +45,11 @@ const routes: Routes = [
       { path: 'manage', component: ManageComponent }],
     canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' }
   },
-    // Analyzer paths
-  {path:'analyzer', component:AnalyzerSelectionComponent},
-  {path:'report',component: AnalyzerReportsComponent},
-  {path:'details',component:EmployeeDetailsComponent },
+  // Analyzer Components
+  { path: 'analyzer_dashboard', component: AnalyzerSelectionComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
+  { path: 'reports', component: AnalyzerReportsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
+  { path: 'analyzer_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
+
   // Auto Redirection for Unknown paths
   { path: '**', redirectTo: '' }
 ];
@@ -57,4 +59,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [AnalyzerReportsComponent, InventoryManagerSelectionsComponent, EmployeeDetailsComponent, ShopsDetailsComponent]
+export const routingComponents = []
+
+//AnalyzerSelectionComponent, AnalyzerReportsComponent, InventoryManagerSelectionsComponent, EmployeeDetailsComponent, ShopsDetailsComponent
