@@ -1,156 +1,105 @@
-<table class="table" id="tableid">
-    <thead class="bg-primary">
-
-        <tr>
-            <th scope="col">USERNAME</th>
-            <th scope="col">ROLE</th>
-            <th scope="col">FIRSTNAME</th>
-            <th scope="col">LASTNAME</th>
-            <th scope="col">ADDRESS LINE 1</th>
-            <th scope="col">ADDRESS LINE 2</th>
-            <th scope="col">ADDRESS LINE 3</th>
-            <th scope="col">PHONE</th>
-            
-        </tr>
-
-
-    </thead>
-    <tbody>
-
-
-
-        <tr *ngFor="let user of users">
-            <th>
-
-                <!-- Button trigger modal -->
-
-                <a class="usernamelink" data-toggle="modal" data-target="#userUpdateForm">
-                    {{user.username}}
-                </a>
-
-                <!-- Modal -->
-                <div class="modal fade" id="userUpdateForm" tabindex="-1" role="dialog"
-                    aria-labelledby="userUpdateFormLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
-                        <div class="modal-content">
-                            <div class="bg-primary formheader">
-
-                                <h6 class="modal-title " id="userRegistrationFormheader"> <img class="regicon"
-                                        src="assets/Icons/Icons/how_to_reg-24px.svg" alt="home">USERNAME_1</h6>
-
-                            </div>
-                            <div class="modal-body">
-                                <form class="form-group" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
-
-                                    <div class="form-group form-inline ">
-                                        <label for="firstname" class="p-3 mb-2 bg-primary text-white">FIRSTNAME</label>
-                                        <input type="text" class="form-control" id="firstname"
-                                            [formControlName]="'firstname'" name="firstname"
-                                            placeholder="Required field">
-                                    </div>
-
-                                    <div class="form-group form-inline">
-                                        <label for="lastname" class="p-3 mb-2 bg-primary text-white">LASTNAME</label>
-                                        <input type="text" class="form-control" id="lastname"
-                                            [formControlName]="'lastname'" name="lastname" placeholder="Required field">
-                                    </div>
-                                    <!--       
-                                <div class="form-group form-inline">
-                                    <label for="role" class="p-3 mb-2 bg-primary text-white">ROLE</label>
-                                    <input type="text" class="form-control" id="lastname" [formControlName]="'role'" name="lastname" placeholder="Required field">
-                                </div>
-                                -->
-
-                                    <div class="form-group form-inline">
-                                        <label for="role" class="p-3 mb-2 bg-primary text-white">ROLE</label>
-                                        <div class="input-group mb-3">
-
-                                            <select class="custom-select" id="inputGroupSelect01"
-                                                [formControlName]="'role'" name="role">
-                                                <option selected>Select an option</option>
-                                                <option value="Analyzer">Analyzer</option>
-                                                <option value="Cach collector">Cach collector</option>
-                                                <option value="Inventory manager">Inventory manager</option>
-                                            </select>
-                                        </div>
-
-                                    </div>
-
-                                    <div class="form-group form-inline">
-                                        <label for="username" class="p-3 mb-2 bg-primary text-white">USERNAME</label>
-                                        <input type="text" class="form-control" id="username"
-                                            [formControlName]="'username'" name="username" placeholder="Required field">
-                                    </div>
+<div class="table-wrapper">
+    <div class="row row-content">
+        <div class="col-12 col-sm-10 offset-1">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="bg-primary">
+                        <tr>
+                            <th scope="col">USERNAME</th>
+                            <th scope="col">ROLE</th>
+                            <th scope="col">FIRSTNAME</th>
+                            <th scope="col">LASTNAME</th>
+                            <th scope="col">ADDRESS</th>
+                            <th>Phone Type</th>
+                            <th>Phone Number</th>
+                            <th>Phone Type</th>
+                            <th>Phone Number</th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let user of users">
+                        <tr>
+                            <td><a class="usernamelink" data-toggle="modal"
+                                    data-target="#userUpdateForm">{{user.username}}</a></td>
+                            <td>{{user.role}}</td>
+                            <td>{{user.firstName}}</td>
+                            <td>{{user.lastName}}</td>
+                            <td>{{user.addressLine1 +', '+ user.addressLine2 +', '+ user.addressLine3 +'.'}}</td>
+                            <td>{{user.phoneNumbers[0]?.phoneType}}</td>
+                            <td>{{user.phoneNumbers[0]?.phoneNumber}}</td>
+                            <td>{{user.phoneNumbers[0]?.phoneType}}</td>
+                            <td>{{user.phoneNumbers[0]?.phoneNumber}}</td>
+                            <!-- <th *ngFor="let phone of user.phoneNumbers"><div>{{phone.phoneType}} {{phone.phoneNumber}}<br></div></th> -->
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 
 
+<!-- Update User Details Modal -->
+<div class="modal fade" id="userUpdateForm" tabindex="-1" role="dialog" aria-labelledby="userUpdateFormLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="bg-primary formheader">
+                <h6 class="modal-title " id="userRegistrationFormheader"> <img class="regicon"
+                        src="assets/Icons/Icons/how_to_reg-24px.svg" alt="home">Update User Details</h6>
+            </div>
+            <div class="modal-body">
+                <form class="form-group" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                    <div class="form-group form-inline ">
+                        <label for="firstname" class="p-3 mb-2 bg-primary text-white">FIRSTNAME</label>
+                        <input type="text" class="form-control" id="firstname" [formControlName]="'firstname'"
+                            name="firstname" placeholder="Required field">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="lastname" class="p-3 mb-2 bg-primary text-white">LASTNAME</label>
+                        <input type="text" class="form-control" id="lastname" [formControlName]="'lastname'"
+                            name="lastname" placeholder="Required field">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="role" class="p-3 mb-2 bg-primary text-white">ROLE</label>
+                        <div class="input-group mb-3">
 
-
-
-                                    <div class="form-group form-inline">
-                                        <label for="addressline1" class="p-3 mb-2 bg-primary text-white">ADDRESS
-                                            LINE1</label>
-                                        <input type="text" class="form-control" id="address1"
-                                            [formControlName]="'addressline1'" name="addressline1"
-                                            placeholder="Required field">
-                                    </div>
-
-                                    <div class="form-group form-inline">
-                                        <label for="addressline2" class="p-3 mb-2 bg-primary text-white">ADDRESS
-                                            LINE2</label>
-                                        <input type="text" class="form-control" id="address2"
-                                            [formControlName]="'addressline2'" name="addressline2"
-                                            placeholder="Required field">
-                                    </div>
-
-                                    <div class="form-group form-inline">
-                                        <label for="addressline3" class="p-3 mb-2 bg-primary text-white">ADDRESS
-                                            LINE3</label>
-                                        <input type="text" class="form-control" id="address3"
-                                            [formControlName]="'addressline3'" name="addressline3"
-                                            placeholder="Required field">
-                                    </div>
-
-
-
-
-                                    <button type="submit" class="btn btn-primary">UPDATE</button>
-
-
-                                </form>
-                            </div>
-                            <div class="modal-footer">
-
-                            </div>
+                            <select class="custom-select" id="inputGroupSelect01" [formControlName]="'role'"
+                                name="role">
+                                <option selected>Select an option</option>
+                                <option value="Analyzer">Analyzer</option>
+                                <option value="Cach collector">Cach collector</option>
+                                <option value="Inventory manager">Inventory manager</option>
+                            </select>
                         </div>
                     </div>
-                </div>
-
-
-            </th>
-
-
-            <th>{{user.role}}</th>
-            <th>{{user.firstName}}</th>
-            <th>{{user.lastName}}</th>
-            <th>{{user.addressLine1}}</th>
-            <th>{{user.addressLine2}}</th>
-            <th>{{user.addressLine3}}</th>
-            <th *ngFor="let phone of user.phoneNumbers">
-
-                <div>
-                    {{phone.phoneType}} {{phone.phoneNumber}}<br>
-                   
-                </div>
-           
-            </th>
-           
-
-
-
-
-
-        </tr>
-
-    </tbody>
-
-</table>
+                    <div class="form-group form-inline">
+                        <label for="username" class="p-3 mb-2 bg-primary text-white">USERNAME</label>
+                        <input type="text" class="form-control" id="username" [formControlName]="'username'"
+                            name="username" placeholder="Required field">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="addressline1" class="p-3 mb-2 bg-primary text-white">ADDRESS
+                            LINE1</label>
+                        <input type="text" class="form-control" id="address1" [formControlName]="'addressline1'"
+                            name="addressline1" placeholder="Required field">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="addressline2" class="p-3 mb-2 bg-primary text-white">ADDRESS
+                            LINE2</label>
+                        <input type="text" class="form-control" id="address2" [formControlName]="'addressline2'"
+                            name="addressline2" placeholder="Required field">
+                    </div>
+                    <div class="form-group form-inline">
+                        <label for="addressline3" class="p-3 mb-2 bg-primary text-white">ADDRESS
+                            LINE3</label>
+                        <input type="text" class="form-control" id="address3" [formControlName]="'addressline3'"
+                            name="addressline3" placeholder="Required field">
+                    </div>
+                    <button type="submit" class="btn btn-primary">UPDATE</button>
+                </form>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>

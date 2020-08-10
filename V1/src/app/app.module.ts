@@ -9,7 +9,6 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
-import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -25,6 +24,8 @@ import { DistributionDashboardComponent } from './inventory-manager-dashboard/di
 import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection.component';
 import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
 import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+import { UpdateUserStatusComponent } from './admin-dashboard/update-user-status/update-user-status.component';
+import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.component';
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -35,7 +36,6 @@ export function tokenGetter() {
     AppComponent,
     AdminDashboardComponent,
     UsersComponent,
-    NewuserComponent,
     AppComponent,
     LoginComponent,
     SignupComponent,
@@ -50,7 +50,9 @@ export function tokenGetter() {
     DistributionDashboardComponent,
     AnalyzerSelectionComponent,
     AnalyzerReportsComponent,
-    EmployeeDetailsComponent
+    EmployeeDetailsComponent,
+    UpdateUserStatusComponent,
+    DeleteUserComponent
 
   ],
   imports: [

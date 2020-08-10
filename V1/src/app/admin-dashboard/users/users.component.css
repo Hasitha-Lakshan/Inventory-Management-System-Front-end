@@ -1,4 +1,44 @@
-#tableid{
+th{
+    color: white;
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.alert-danger
+{
+    text-align: center;
+}
+
+tbody{
+    background-color: #e9ecef;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #tableid{
     width: 100%;
 }
 
@@ -70,4 +110,4 @@ label{
 }
 .usernamelink:hover{
     cursor: pointer;
-}
+} */
