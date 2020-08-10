@@ -20,6 +20,9 @@ import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/
 import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
 import { UpdateUserStatusComponent } from './admin-dashboard/update-user-status/update-user-status.component';
 import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.component';
+import { StoreHouseDashboardComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-dashboard.component';
+import { StoreHouseNewStocksComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-new-stocks/store-house-new-stocks.component';
+import { StoreHouseReportsComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/store-house-reports.component';
 
 
 const routes: Routes = [
@@ -42,6 +45,14 @@ const routes: Routes = [
   { path: 'inventory_manager', component: InventoryManagerSelectionsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'inventory_manager_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'shop_details', component: ShopsDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
+  // Inventory Manager Store House Components
+  {
+    path: 'store_house_dashboard', component: StoreHouseDashboardComponent,
+    children: [
+      { path: '', component: StoreHouseNewStocksComponent },
+      { path: 'store_house_reports', component: StoreHouseReportsComponent }],
+    canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' }
+  },
   // Inventory Manager - Distribution Components
   {
     path: 'distribution_dashboard', component: DistributionDashboardComponent,
@@ -66,5 +77,3 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = []
-
-//AnalyzerSelectionComponent, AnalyzerReportsComponent, InventoryManagerSelectionsComponent, EmployeeDetailsComponent, ShopsDetailsComponent

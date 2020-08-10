@@ -26,6 +26,9 @@ import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/
 import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
 import { UpdateUserStatusComponent } from './admin-dashboard/update-user-status/update-user-status.component';
 import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.component';
+import { StoreHouseDashboardComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-dashboard.component';
+import { StoreHouseReportsComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/store-house-reports.component';
+import { StoreHouseNewStocksComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-new-stocks/store-house-new-stocks.component';
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -52,7 +55,10 @@ export function tokenGetter() {
     AnalyzerReportsComponent,
     EmployeeDetailsComponent,
     UpdateUserStatusComponent,
-    DeleteUserComponent
+    DeleteUserComponent,
+    StoreHouseDashboardComponent,
+    StoreHouseReportsComponent,
+    StoreHouseNewStocksComponent
 
   ],
   imports: [
