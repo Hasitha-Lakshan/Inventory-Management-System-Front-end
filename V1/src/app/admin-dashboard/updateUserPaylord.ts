@@ -1,3 +1,5 @@
+import { PhoneNumber } from '../auth/signup/phone-number';
+
 export class UpdateUserPaylord{
     firstName:String;
     lastName:String;
@@ -6,7 +8,7 @@ export class UpdateUserPaylord{
     addressLine2:String;
     addressLine3:String;
     username:String;
- 
+    phoneNumbers:PhoneNumber[]
     
 
 }
