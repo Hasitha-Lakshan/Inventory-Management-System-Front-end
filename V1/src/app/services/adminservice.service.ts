@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { UpdateUserPaylord } from '../admin-dashboard/updateUserPaylord';
-import { DeleteUserPaylord } from '../admin-dashboard/deleteUserPaylord';
-import {UserPaylord} from '../admin-dashboard/usersPaylord'
+import { UpdateUserPaylord } from '../admin-dashboard/users/updateUserPaylord';
+import { DeleteUserPaylord } from '../admin-dashboard/delete-user/deleteUserPaylord';
+import {UserPaylord} from '../admin-dashboard/users/usersPaylord'
 import { Observable } from 'rxjs';
 
-import{StatusPaylord} from '../admin-dashboard/statusPaylord'
-import { PhonePaylord } from '../admin-dashboard/phonePaylord';
+import{StatusPaylord} from '../admin-dashboard/update-user-status/statusPaylord'
+import { PhonePaylord } from '../admin-dashboard/users/phonePaylord';
 import { PhoneNumber } from '../auth/signup/phone-number';
 @Injectable({
   providedIn: 'root'

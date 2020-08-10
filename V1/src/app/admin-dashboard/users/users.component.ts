@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormControl,Validators } from '@angular/forms';
-import{UpdateUserPaylord} from '../updateUserPaylord';
-import {UserPaylord} from '../usersPaylord';
+import{UpdateUserPaylord} from './updateUserPaylord';
+import {UserPaylord} from './usersPaylord';
 import {AdminserviceService} from '../../services/adminservice.service'
 import { Observable } from 'rxjs';
 import { PhoneNumber } from 'src/app/auth/signup/phone-number';

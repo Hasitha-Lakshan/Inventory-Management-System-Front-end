@@ -1,4 +1,4 @@
-import { PhoneNumber } from '../auth/signup/phone-number';
+import { PhoneNumber } from '../../auth/signup/phone-number';
 
 export class UpdateUserPaylord{
     firstName:String;
