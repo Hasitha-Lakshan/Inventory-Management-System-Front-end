@@ -28,7 +28,7 @@
                             <td>{{user.phoneNumbers[0]?.phoneNumber}}</td>
                             <td>{{user.phoneNumbers[0]?.phoneType}}</td>
                             <td>{{user.phoneNumbers[0]?.phoneNumber}}</td>
-                            <!-- <th *ngFor="let phone of user.phoneNumbers"><div>{{phone.phoneType}} {{phone.phoneNumber}}<br></div></th> -->
+                            
                         </tr>
                     </tbody>
                 </table>
@@ -39,25 +39,36 @@
 
 
 <!-- Update User Details Modal -->
-<div class="modal fade" id="userUpdateForm" tabindex="-1" role="dialog" aria-labelledby="userUpdateFormLabel"
-    aria-hidden="true">
-    <div class="modal-dialog" role="document">
+<div class="modal fade " id="userUpdateForm" tabindex="-1" role="dialog" aria-labelledby="userUpdateFormLabel"
+    aria-hidden="true" >
+    <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="bg-primary formheader">
-                <h6 class="modal-title " id="userRegistrationFormheader"> <img class="regicon"
-                        src="assets/Icons/Icons/how_to_reg-24px.svg" alt="home">Update User Details</h6>
+                <h5 class="modal-title" id="userRegistrationFormheader"> <img class="regicon"
+                        src="assets/Icons/Icons/how_to_reg-24px.svg" alt="home">Update User Details</h5>
             </div>
             <div class="modal-body">
                 <form class="form-group" [formGroup]="updateForm" (ngSubmit)="onSubmit()">
                     <div class="form-group form-inline ">
                         <label for="firstname" class="p-3 mb-2 bg-primary text-white">FIRSTNAME</label>
-                        <input type="text" class="form-control" id="firstname" [formControlName]="'firstname'"
+                        <input type="text" class="form-control" id="firstname" [formControlName]="'firstName'"
                             name="firstname" placeholder="Required field">
+                            <span class="form-text text-danger"
+                                *ngIf="updateForm.controls.firstName.errors?.required && updateForm.controls.firstName.touched">
+                                firstname is  a required field!
+                            </span>
                     </div>
+                    
+                   
                     <div class="form-group form-inline">
                         <label for="lastname" class="p-3 mb-2 bg-primary text-white">LASTNAME</label>
-                        <input type="text" class="form-control" id="lastname" [formControlName]="'lastname'"
+                        <input type="text" class="form-control" id="lastname" [formControlName]="'lastName'"
                             name="lastname" placeholder="Required field">
+                    
+                        <span class="form-text text-danger"
+                            *ngIf="updateForm.controls.lastName.errors?.required && updateForm.controls.lastName.touched">
+                            lastname is a required field!
+                        </span>        
                     </div>
                     <div class="form-group form-inline">
                         <label for="role" class="p-3 mb-2 bg-primary text-white">ROLE</label>
@@ -65,37 +76,100 @@
 
                             <select class="custom-select" id="inputGroupSelect01" [formControlName]="'role'"
                                 name="role">
-                                <option selected>Select an option</option>
+                                <option value="" selected disabled>Select an option..</option>
                                 <option value="Analyzer">Analyzer</option>
                                 <option value="Cach collector">Cach collector</option>
                                 <option value="Inventory manager">Inventory manager</option>
                             </select>
                         </div>
+                        <span class="form-text text-danger"
+                            *ngIf="updateForm.controls.role.errors?.required && updateForm.controls.role.touched">
+                            User role is required field!
+                       </span>
+                        
+                        <span class="form-text text-danger"
+                             *ngIf="updateForm.controls.role.errors?.required && updateForm.controls.role.touched">
+                             Role is  a required field!
+                        </span>
                     </div>
                     <div class="form-group form-inline">
                         <label for="username" class="p-3 mb-2 bg-primary text-white">USERNAME</label>
                         <input type="text" class="form-control" id="username" [formControlName]="'username'"
                             name="username" placeholder="Required field">
+
+                            
+                        <span class="form-text text-danger"
+                            *ngIf="updateForm.controls.username.errors?.required && updateForm.controls.username.touched">
+                            Username is  a required field!
+                        </span>
                     </div>
                     <div class="form-group form-inline">
                         <label for="addressline1" class="p-3 mb-2 bg-primary text-white">ADDRESS
                             LINE1</label>
-                        <input type="text" class="form-control" id="address1" [formControlName]="'addressline1'"
+                        <input type="text" class="form-control" id="address1" [formControlName]="'addressLine1'"
                             name="addressline1" placeholder="Required field">
+
+                        
+                        <span class="form-text text-danger"
+                            *ngIf="updateForm.controls.addressLine1.errors?.required && updateForm.controls.addressLine1.touched">
+                            Addressline 1  is required!
+                        </span>
                     </div>
                     <div class="form-group form-inline">
                         <label for="addressline2" class="p-3 mb-2 bg-primary text-white">ADDRESS
                             LINE2</label>
-                        <input type="text" class="form-control" id="address2" [formControlName]="'addressline2'"
+                        <input type="text" class="form-control" id="address2" [formControlName]="'addressLine2'"
                             name="addressline2" placeholder="Required field">
+
+                        <span class="form-text text-danger"
+                            *ngIf="updateForm.controls.addressLine2.errors?.required && updateForm.controls.addressLine2.touched">
+                            Addressline 2  is required!
+                        </span>
                     </div>
                     <div class="form-group form-inline">
                         <label for="addressline3" class="p-3 mb-2 bg-primary text-white">ADDRESS
                             LINE3</label>
-                        <input type="text" class="form-control" id="address3" [formControlName]="'addressline3'"
+                        <input type="text" class="form-control" id="address3" [formControlName]="'addressLine3'"
                             name="addressline3" placeholder="Required field">
+
+                        <span class="form-text text-danger"
+                            *ngIf="updateForm.controls.addressLine3.errors?.required && updateForm.controls.addressLine3.touched">
+                            Addressline 3  is required!
+                        </span>
                     </div>
-                    <button type="submit" class="btn btn-primary">UPDATE</button>
+
+                    <label  class="p-3 mb-2 bg-primary text-white">Telephone Numbers</label>
+                    <div formArrayName="phoneNumbers" *ngFor="let phoneNumber of phoneNumbers.controls; let i=index">
+                        <div class="form-row" [formGroupName]="i">
+                            <div class="form-group col-md-4">
+                                <select class="form-control" [formControlName]="'phoneType'">
+                                    <option value="" selected disabled>Type..</option>
+                                    <option value="Office">Office</option>
+                                    <option value="Home">Home</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <input [formControlName]="'phoneNumber'" type="text" class="form-control" style="width: 350px;"
+                                    placeholder="Phone Number">
+                                <span class="form-text text-danger" *ngIf="phoneNumber.invalid && phoneNumber.touched">
+                                    Phone number must contains 10 numbers!
+                                </span>
+                            </div>
+                            <div>
+                                <button type="button" class="btn btn-secondary" (click)="deletePhoneNumber(i)">X</button>
+                            </div>
+                            
+                        </div>
+                        
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary mb-4" (click)="addNewNumber()">Add Number</button>
+                    </div>
+                    <hr>
+                    <button type="submit" class="btn btn-primary bg-primary text-white">UPDATE</button>
+                    <br><br>
+                    <button type="reset" class="btn btn-primary bg-primary text-white">RESET</button>
                 </form>
             </div>
             <div class="modal-footer">
