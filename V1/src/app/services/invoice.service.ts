@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Data } from '../invoice-report/datafilter/datafilter.component';
+import { Data } from '../inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/datafilter/datafilter.component';
 import { Observable } from 'rxjs';
-import { UpdateData } from '../invoice-report/update-report/update-report.component';
+import { UpdateData } from '../inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/update-report/update-report.component';
 
 @Injectable({
   providedIn: 'root',

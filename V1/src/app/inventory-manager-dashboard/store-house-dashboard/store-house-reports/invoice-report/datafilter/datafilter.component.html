@@ -1,15 +1,16 @@
 <app-header></app-header>
 
 <app-menu></app-menu>
-
-<div class="container mt-5 mb-5 p-4 col-lg-8 border border-primary">
+<div class="container-fluid">
+<div class="card">
+<div class="card-body">
 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: #0978F7;">
 
    <ul class="navbar-nav navbar-collapse justify-content-end"> 
     <li>
              
         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="tagType">
-            <option selected >Search Tag</option>
+            <option default selected >Search Tag</option>
             <option value="1">Invoice No.</option>
             <option value="2">Shop Name</option>
             <option value="3">Payment Method</option>
@@ -32,16 +33,21 @@
         <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="paymentMethod">
             <option selected value="1">Cash</option>
             <option value="2">Cheque</option>
+            <option value="3">Cheque & Cash Both</option>
         </select>
     </ul>
     <ul *ngIf="tagType==4" class="navbar-nav navbar-collapse justify-content-end"> 
          <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="paymentStatus">
-            <option selected value="1">Active</option>
-            <option value="2">InActive</option>
+            <option selected value="1">InActive</option>
+            <option value="2">Active</option>
         </select>
     </ul>
+    <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
+        <li class=""><a class="navbar-brand"><img class="d-inline-block align-content-center" src="assets/Icons/date_range-24px.svg"  alt="admin"> TIME PERIOD</a></li>
+        
+    </ul>
      <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
-        <li class=""><label class="lb">Start Time :  </label></li>
+        <li class=""><span class="lb">Start Time : </span></li>
         <li><input type="date" class="form-control" id="exampleFormControlInput1" [ngModel]="startDate | date:'yyy-MM-dd'" (ngModelChange)="startDate = $event" > </li>
     </ul>
     <ul *ngIf="tagType!=1" class="navbar-nav navbar-collapse justify-content-end"> 
@@ -49,8 +55,8 @@
         <li><input type="date" class="form-control" id="exampleFormControlInput1" [ngModel]="endDate | date:'yyy-MM-dd'" (ngModelChange)="endDate = $event"> </li>
     </ul>
     <ul class="navbar-nav navbar-collapse justify-content-end"> 
-        <li><a  class="nav-link" ><button type="button" class="btn btn-success" (click)="filter()">Search</button></a>
-        <li *ngIf="isReset"><a  class="nav-link" ><button type="button" class="btn btn-warning" (click)="reset()">Reset</button></a>
+        <li ><a  class="nav-link" ><span class="btn btn-light" (click)="filter()"><img  src="assets/img/malinda-search.png"  alt="admin"></span></a>
+        <li *ngIf="isReset"><a  class="nav-link"> <span class="btn btn-danger" (click)="reset()"><img  src="assets/img/reset.png"  alt="admin"></span></a>
     </ul>
      
 
@@ -61,8 +67,8 @@
 
   
 
-    
-    <table class="table">
+    <div class="table-responsive-md">
+    <table class="table table-bordered table-hover">
     <thead style="background-color: #0978F7;">
         <tr>
             <th class="cl" scope="col">Invoice Name</th>
@@ -71,10 +77,10 @@
             <th class="cl" scope="col">Expire Date</th>
             <th class="cl" scope="col">Status</th>
             <th class="cl" scope="col">Value</th>
-             <th class="cl" scope="col">check</th>
+            <th class="cl" scope="col">check</th>
             <th class="cl" scope="col">cash</th>
             <th class="cl" scope="col">credits</th>
-            <th class="cl" scope="col">Update</th>
+            
                 
             
         </tr>
@@ -85,7 +91,8 @@
           <td>{{d.shopName}}</td>
           <td>{{d.issuedDate | date}}</td>
           <td>{{d.expireDate | date}}</td>
-          <td>{{d.status}}</td>
+          <td *ngIf="d.status">InActive</td>
+          <td *ngIf="!d.status">Active</td>
           <td>{{d.value}}</td>
           <td>{{d.cheque}}</td>
           <td>{{d.cash}}</td>
@@ -97,5 +104,9 @@
        
     </tbody>
 </table>
+</div>
 
+</div>
+
+</div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { InvoiceService } from '../../services/invoice.service';
+import { InvoiceService } from '../../../../../services/invoice.service';
 import { Router } from '@angular/router';
 
 
@@ -111,6 +111,42 @@ report: Data;
         ps = this.data.filter(
           (d) =>
             d.status == false &&
+            new Date(d.issuedDate) >= new Date(this.startDate) &&
+            new Date(d.issuedDate) <= new Date(this.endDate)
+        );
+        console.log(ps);
+        this.data.length = 0;
+        this.data = ps;
+        console.log(this.data);
+      }
+    } else if (this.tagType == 3) {
+      let ps: Data[];
+      if (this.paymentMethod == 1) {
+        ps = this.data.filter(
+          (d) =>
+            d.cash > 0 && d.cheque == 0 &&
+            new Date(d.issuedDate) >= new Date(this.startDate) &&
+            new Date(d.issuedDate) <= new Date(this.endDate)
+        );
+        console.log(ps);
+        this.data.length = 0;
+        this.data = ps
+        console.log(this.data);
+      } else if (this.paymentMethod == 2) {
+        ps = this.data.filter(
+          (d) =>
+            d.cash == 0 && d.cheque > 0 &&
+            new Date(d.issuedDate) >= new Date(this.startDate) &&
+            new Date(d.issuedDate) <= new Date(this.endDate)
+        );
+        console.log(ps);
+        this.data.length = 0;
+        this.data = ps;
+        console.log(this.data);
+      } else if (this.paymentMethod == 3) {
+        ps = this.data.filter(
+          (d) =>
+            d.cash > 0 && d.cheque > 0 &&
             new Date(d.issuedDate) >= new Date(this.startDate) &&
             new Date(d.issuedDate) <= new Date(this.endDate)
         );

@@ -1,6 +1,6 @@
 import { NgModule, Component } from '@angular/core';
-import { UpdateReportComponent } from './invoice-report/update-report/update-report.component';
-import { DatafilterComponent } from './invoice-report/datafilter/datafilter.component'
+import { UpdateReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/update-report/update-report.component';
+import { DatafilterComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/datafilter/datafilter.component'
 import { Routes, CanActivate, RouterModule } from '@angular/router';
 import { AuthGuard } from './security/auth.guard'
 

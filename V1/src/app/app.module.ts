@@ -11,10 +11,10 @@ import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { MenuComponent } from './invoice-report/menu/menu.component';
-import { DatafilterComponent } from './invoice-report/datafilter/datafilter.component';
+import { MenuComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/menu/menu.component';
+import { DatafilterComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/datafilter/datafilter.component';
 import { InvoiceService } from './services/invoice.service';
-import { UpdateReportComponent } from './invoice-report/update-report/update-report.component'
+import { UpdateReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/update-report/update-report.component'
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { LoginComponent } from './auth/login/login.component';
