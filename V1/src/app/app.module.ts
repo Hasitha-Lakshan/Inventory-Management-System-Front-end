@@ -29,6 +29,9 @@ import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.c
 import { StoreHouseDashboardComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-dashboard.component';
 import { StoreHouseReportsComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/store-house-reports.component';
 import { StoreHouseNewStocksComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-new-stocks/store-house-new-stocks.component';
+import { StoredItemsReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/stored-items-report/stored-items-report.component';
+import { SoldItemsReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/sold-items-report/sold-items-report.component';
+import { InvoiceReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/invoice-report.component';
 
 export function tokenGetter() {
   return localStorage.getItem("authenticationToken");
@@ -58,7 +61,10 @@ export function tokenGetter() {
     DeleteUserComponent,
     StoreHouseDashboardComponent,
     StoreHouseReportsComponent,
-    StoreHouseNewStocksComponent
+    StoreHouseNewStocksComponent,
+    StoredItemsReportComponent,
+    SoldItemsReportComponent,
+    InvoiceReportComponent
 
   ],
   imports: [
