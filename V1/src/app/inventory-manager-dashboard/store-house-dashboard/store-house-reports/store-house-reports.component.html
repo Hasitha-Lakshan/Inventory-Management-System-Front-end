@@ -1,10 +1,13 @@
 <div class="content container mt-5">
     <div class="container custom-control">
-        <button type="button" class="btn btn-primary btn-block text-left">
-            <img src="assets/Icons/article-24px.svg" alt="localShipping"><b> STORED ITEMS REPORT</b>
+        <button type="button" [routerLink]="['/stored_items_report']" class="btn btn-primary btn-block text-left">
+            <img src="assets/Icons/article-24px.svg"><b> STORED ITEMS REPORT</b>
         </button>
-        <button type="button" class="btn btn-primary btn-block text-left">
-            <img src="assets/Icons/article-24px.svg" alt="localShipping"><b> INVOICE REPORT</b>
+        <button type="button" [routerLink]="['/sold_items_report']" class="btn btn-primary btn-block text-left">
+            <img src="assets/Icons/article-24px.svg"><b> SOLD ITEMS REPORT</b>
+        </button>
+        <button type="button" [routerLink]="['/invoice_report']" class="btn btn-primary btn-block text-left">
+            <img src="assets/Icons/article-24px.svg"><b> INVOICE REPORT</b>
         </button>
     </div>
 </div>
