@@ -10,7 +10,6 @@ import { LoginComponent } from './auth/login/login.component';
 import { HeaderComponent } from './header/header.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
-import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { InventoryManagerSelectionsComponent } from './inventory-manager-dashboard/inventory-manager-selections.component';
 import { ShopsDetailsComponent } from './inventory-manager-dashboard/shops-details/shops-details.component';
 import { ReportsComponent } from './inventory-manager-dashboard/distribution-dashboard/reports/reports.component';
@@ -21,6 +20,8 @@ import { DistributionDashboardComponent } from './inventory-manager-dashboard/di
 import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection.component';
 import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
 import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+import { UpdateUserStatusComponent } from './admin-dashboard/update-user-status/update-user-status.component';
+import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.component';
 import { StoreHouseDashboardComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-dashboard.component';
 import { StoreHouseNewStocksComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-new-stocks/store-house-new-stocks.component';
 import { StoreHouseReportsComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/store-house-reports.component';
@@ -34,12 +35,18 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'header', component: HeaderComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_CASH_COLLECTOR' } },
   // Admin Components
-  { path: 'admin', component: AdminDashboardComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ADMIN' } },
-  { path: 'newuser', component: NewuserComponent },
-  { path: 'users', component: UsersComponent },
+  {
+    path: 'admin', component: AdminDashboardComponent,
+    children: [
+      { path: '', component: UsersComponent },
+      { path: 'update_user', component: UpdateUserStatusComponent },
+      { path: 'delete_user', component: DeleteUserComponent }],
+    canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ADMIN' }
+  },
   //invoice report
   { path: 'invoice-reports', component: DatafilterComponent },
   { path: 'update-report/:id', component: UpdateReportComponent },
+  
   // Inventory Manager Components
   { path: 'inventory_manager', component: InventoryManagerSelectionsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'inventory_manager_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
@@ -79,5 +86,3 @@ const routes: Routes = [
 })
 export class AppRoutingModule { }
 export const routingComponents = []
-
-//AnalyzerSelectionComponent, AnalyzerReportsComponent, InventoryManagerSelectionsComponent, EmployeeDetailsComponent, ShopsDetailsComponent

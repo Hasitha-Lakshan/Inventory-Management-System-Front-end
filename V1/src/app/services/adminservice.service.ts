@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http'
-import { UpdateUserPaylord } from '../admin-dashboard/updateUserPaylord';
-import { DeleteUserPaylord } from '../admin-dashboard/deleteUserPaylord';
-import {UserPaylord} from '../admin-dashboard/usersPaylord'
+import { UpdateUserPaylord } from '../admin-dashboard/users/updateUserPaylord';
+import { DeleteUserPaylord } from '../admin-dashboard/delete-user/deleteUserPaylord';
+import {UserPaylord} from '../admin-dashboard/users/usersPaylord'
 import { Observable } from 'rxjs';
 
-import{StatusPaylord} from '../admin-dashboard/statusPaylord'
+import{StatusPaylord} from '../admin-dashboard/update-user-status/statusPaylord'
+import { PhonePaylord } from '../admin-dashboard/users/phonePaylord';
+import { PhoneNumber } from '../auth/signup/phone-number';
 @Injectable({
   providedIn: 'root'
 })
@@ -15,8 +17,8 @@ export class AdminserviceService {
 
 
 updateUser(data){
-  
-  let updateUserPaylord=new UpdateUserPaylord();
+ 
+ /* let updateUserPaylord=new UpdateUserPaylord();
   updateUserPaylord.firstName=data.firstname;
   updateUserPaylord.lastName=data.lastname;
   updateUserPaylord.role=data.role;
@@ -24,18 +26,19 @@ updateUser(data){
   updateUserPaylord.addressLine2=data.addressline2;
   updateUserPaylord.addressLine3=data.addressline3;
   updateUserPaylord.username=data.username;
+  updateUserPaylord.phoneNumbers=[]
 
   console.log(updateUserPaylord)
   return this.httpclient.put("http://localhost:8080/api/admin/updateuser",updateUserPaylord)
-
+*/
   
 
 }
 
 
 
-getAllUsers(){
-  return this.httpclient.get<Array<UserPaylord>>("http://localhost:8080/api/admin/users");
+getAllUsers():Observable<UserPaylord[]>{
+  return this.httpclient.get<UserPaylord[]>("http://localhost:8080/api/admin/users");
   
 }
 setStatus(data){
@@ -50,6 +53,6 @@ deleteUser(data){
   let deleteUserPaylord=new DeleteUserPaylord();
   deleteUserPaylord.username=data.username;
   console.log(deleteUserPaylord);
-  return this.httpclient.put("http://localhost:8080/api/admin/deleteuser",deleteUserPaylord);
+  return this.httpclient.delete("http://localhost:8080/api/admin/deleteuser/"+data.username);
 }
 }

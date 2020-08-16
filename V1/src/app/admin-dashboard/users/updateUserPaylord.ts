@@ -1,5 +1,6 @@
-export class UserPaylord{
-    userID:String;
+import { PhoneNumber } from '../../auth/signup/phone-number';
+
+export class UpdateUserPaylord{
     firstName:String;
     lastName:String;
     role:String;
@@ -7,7 +8,7 @@ export class UserPaylord{
     addressLine2:String;
     addressLine3:String;
     username:String;
-    accountStatus:String
+    phoneNumbers:PhoneNumber[]
     
 
 }

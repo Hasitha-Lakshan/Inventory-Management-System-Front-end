@@ -17,7 +17,6 @@ import { InvoiceService } from './services/invoice.service';
 import { UpdateReportComponent } from './invoice-report/update-report/update-report.component'
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
-import { NewuserComponent } from './admin-dashboard/newuser/newuser.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 import { HomeComponent } from './home/home.component';
@@ -33,6 +32,8 @@ import { DistributionDashboardComponent } from './inventory-manager-dashboard/di
 import { AnalyzerSelectionComponent } from './Analyzer-Dashboard/analyzer-selection.component';
 import { AnalyzerReportsComponent } from './Analyzer-Dashboard/analyzer-reports/analyzer-reports.component';
 import { EmployeeDetailsComponent } from './Analyzer-Dashboard/employee-details/employee-details.component';
+import { UpdateUserStatusComponent } from './admin-dashboard/update-user-status/update-user-status.component';
+import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.component';
 import { StoreHouseDashboardComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-dashboard.component';
 import { StoreHouseReportsComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/store-house-reports.component';
 import { StoreHouseNewStocksComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-new-stocks/store-house-new-stocks.component';
@@ -46,7 +47,6 @@ export function tokenGetter() {
     AppComponent,
     AdminDashboardComponent,
     UsersComponent,
-    NewuserComponent,
     AppComponent,
     LoginComponent,
     SignupComponent,
@@ -66,6 +66,8 @@ export function tokenGetter() {
     AnalyzerSelectionComponent,
     AnalyzerReportsComponent,
     EmployeeDetailsComponent,
+    UpdateUserStatusComponent,
+    DeleteUserComponent,
     StoreHouseDashboardComponent,
     StoreHouseReportsComponent,
     StoreHouseNewStocksComponent

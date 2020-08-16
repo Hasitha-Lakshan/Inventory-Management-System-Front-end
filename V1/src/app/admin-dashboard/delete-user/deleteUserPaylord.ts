@@ -1,3 +1,3 @@
 export class DeleteUserPaylord{
-    username:String;
+    username:string;
 }

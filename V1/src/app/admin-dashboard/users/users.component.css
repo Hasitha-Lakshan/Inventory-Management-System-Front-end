@@ -1,4 +1,62 @@
-#tableid{
+th{
+    color: white;
+    text-align: center;
+}
+
+td{
+    text-align: center;
+}
+
+.alert-danger
+{
+    text-align: center;
+}
+
+tbody{
+    background-color: #e9ecef;
+}
+
+input[type]{
+    width: 410px;
+    height: 56px;
+    margin-bottom: auto;
+    border-radius: 0;
+}
+
+#inputGroupSelect01{
+    width: 410px;
+    height: 56px;
+    margin-top: 8px;
+    border-radius: 0;
+}
+
+label{
+    width: 200px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #tableid{
     width: 100%;
 }
 
@@ -70,4 +128,4 @@ label{
 }
 .usernamelink:hover{
     cursor: pointer;
-}
+} */
