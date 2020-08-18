@@ -1,3 +1,153 @@
 <app-header></app-header>
 
-<p>sold-items-report works!</p>
+
+<!-- css file for navbar-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link >
+
+<!-- ..................................................................................................................  -->
+
+
+<!-- This is the code for the navbar-->
+
+<div class="navbar">
+  <a class="active" href="#"><i class="fa fa-fw fa-home"></i> HOME</a>
+  <a href="#"><i class="fa fa-angle-left" style="font-size: 30px;"></i></a>
+  <a href="#"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-card-text" fill="currentcolor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
+    <path fill-rule="evenodd" d="M3 5.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 8a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 8zm0 2.5a.5.5 0 0 1 .5-.5h6a.5.5 0 0 1 0 1h-6a.5.5 0 0 1-.5-.5z"/>
+  </svg>  STORED ITEMS REPORT </a>
+  <a href="#"><svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-person-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  </svg> Inventory Manager</a>
+    <button type="button" class="btn btn-primary" style="border-color: white;">SIGN OUT</button>
+</div>
+<br>
+
+<!-- This is the code for the TIME PERIOD -->
+
+<div class="timebar" style="padding: 15px; margin: 30px; left: 40%;">
+  <a class="active" href="#" ><i class="fa fa-calendar-o" aria-hidden="true" ></i>  TIME PERIOD :</a>
+
+  <form class="form-inline">
+  
+    <label class="sr-only" for="inlineFormInputGroup" >Date</label>
+    <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="top:25px;">
+      <div class="input-group-addon" style="color:white">Start Date </div> <br>
+      <input type="date" class="form-control" id="inlineFormInputGroup" >
+    </div>
+    <div class="input-group mb-2 mr-sm-2 mb-sm-0" style="top:25px;">
+      <div class="input-group-addon" style="color:white">End Date</div>
+      <input type="date" class="form-control" id="inlineFormInputGroup" placeholder="Username">
+    </div>
+  
+  </form>
+  
+
+  <button type="button" class="btn btn-primary" style="position: absolute; right:25px; top:40px; background-color: white; "><i class="fa fa-search" aria-hidden="true" style="color:rgba(57, 159, 243, 0.952); "></i></button>
+
+</div>
+
+
+
+<br>
+ 
+
+ <!-- ..................................................................................................................  -->
+
+  <!-- This is the code for the table-->
+
+  <table class="table table-bordered" style= "width: 60%; margin-left: 25%;">
+    <thead class="p-3 mb-2 bg-primary text-white">
+      <tr style="background-color: rgba(57, 159, 243, 0.952);">
+        <th  scope="col">DATE</th>
+        <th  scope="col">PRODUCT NAME</th>
+        <th  scope="col">1X BUYING PRICE</th>
+        <th  scope="col">1X SELLING PRICE</th>
+        <th  scope="col">QUANTITY</th>
+        <th  scope="col">BUYING PRICE</th>
+        <th  scope="col">SELLING PRICE</th>
+        <th  scope="col">PROFIT</th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr class="thead-light" style="font-weight:normal">
+        <th></th>
+        <th style="font-weight:normal">Munchie cream craker</th>
+        <th style="font-weight:normal">1</th>
+        <th style="font-weight:normal">2</th>
+        <th style="font-weight:normal">3</th>
+        <th style="font-weight:normal">4</th>
+        <th style="font-weight:normal">5</th>
+        <th style="font-weight:normal">55</th>
+        
+      </tr>
+
+      <tr class="thead-light">
+        <th ></th>
+        <th style="font-weight:normal">Nice</th>
+        <th style="font-weight:normal">34</th>
+        <th style="font-weight:normal">656</th>
+        <th style="font-weight:normal">554</th>
+        <th style="font-weight:normal">34</th>
+        <th style="font-weight:normal">344</th>
+        <th style="font-weight:normal">54543</th>
+        
+      </tr>
+
+      <tr class="thead-light">
+        <th ></th>
+        <th style="font-weight:normal">Potato cracker</th>
+        <th style="font-weight:normal">234</th>
+        <th style="font-weight:normal">342</th>
+        <th style="font-weight:normal">343</th>
+        <th style="font-weight:normal">453</th>
+        <th style="font-weight:normal">345</th>
+        <th style="font-weight:normal">57233</th>
+      </tr>
+
+    </tbody>
+  </table>
+<br><br>
+<!-- ..................................................................................................................  -->
+
+<!-- This is the code for the last 5 input bars-->
+<!-- couldnt find better "form class='input' -->
+
+
+<form class="form-horizontal" action="/action_page.php" >
+    <div class="p-3 mb-2 bg-light text-gray" style="padding: 1px; width: 60%;color: rgba(82, 77, 77, 0.555); margin-left: 25%"  >
+    <div class="form-group" class="d-flex justify-content-center" >
+      <label class="control-label col-sm-2" for="TPT">Total Product Types:</label>
+      <div class="col-4">
+        <input type="number" class="form-control" id="TPT" placeholder="">
+      </div>
+    </div>
+    <div class="form-group" class="d-flex justify-content-center">
+      <label class="control-label col-sm-2" for="TQ">Total Quantity:</label>
+      <div class="col-4">
+        <input type="number" class="form-control" id="TQ" placeholder="">
+      </div>
+    </div>
+    <div class="form-group" class="d-flex justify-content-center">
+        <label class="control-label col-sm-2" for="TBP">Total Buying Price:</label>
+        <div class="col-4">
+          <input type="number" class="form-control" id="TBP" placeholder="">
+        </div>
+      </div>
+      <div class="form-group" class="d-flex justify-content-center">
+        <label class="control-label col-sm-2" for="TSP">Total Selling Price:</label>
+        <div class="col-4">
+          <input type="number" class="form-control" id="TSP" placeholder="">
+        </div>
+      </div>
+      <div class="form-group" class="d-flex justify-content-center">
+        <label class="control-label col-sm-2" for="TP">Total Profit:</label>
+        <div class="col-4">
+          <input type="number" class="form-control" id="TP" placeholder="">
+        </div>
+      </div>
+    </div>
+  </form>
+<!-- ..............................................................................................................  -->
