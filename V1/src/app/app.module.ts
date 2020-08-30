@@ -1,12 +1,20 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {Ng2SearchPipeModule} from 'ng2-search-filter'
+
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxWebstorageModule } from 'ngx-webstorage'
 import { JwtModule } from "@auth0/angular-jwt";
 
 import { AppRoutingModule, routingComponents } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { MenuComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/menu/menu.component';
+import { DatafilterComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/datafilter/datafilter.component';
+import { InvoiceService } from './services/invoice.service';
+import { UpdateReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/update-report/update-report.component'
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component';
 import { UsersComponent } from './admin-dashboard/users/users.component';
 import { LoginComponent } from './auth/login/login.component';
@@ -47,6 +55,10 @@ export function tokenGetter() {
     SignupComponent,
     HomeComponent,
     HeaderComponent,
+    AppComponent,
+    MenuComponent,
+    DatafilterComponent,
+    UpdateReportComponent,
     routingComponents,
     InventoryManagerSelectionsComponent,
     ShopsDetailsComponent,
@@ -70,7 +82,11 @@ export function tokenGetter() {
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    FontAwesomeModule,
     FormsModule,
+    HttpClientModule,
+    Ng2SearchPipeModule,
     ReactiveFormsModule,
     HttpClientModule,
     NgxWebstorageModule.forRoot(),
@@ -82,7 +98,7 @@ export function tokenGetter() {
       }
     }),
   ],
-  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true }],
+  providers: [AuthGuard, { provide: HTTP_INTERCEPTORS, useClass: HttpClientInterceptor, multi: true },InvoiceService],
 
   bootstrap: [AppComponent]
 })

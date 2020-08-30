@@ -43,6 +43,10 @@ This application is created for the front-end of a web-based Inventory Managemen
    "./node_modules/jquery/dist/jquery.min.js",
    "./node_modules/bootstrap/dist/js/bootstrap.min.js"
    ```
+    * To search filter install ng2-search-filter 
+    npm i ng2-search-filter --save
+    
+
    * Installing ngx-webstorage:
    ```
    npm install --save ngx-webstorage

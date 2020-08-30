@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
+import { UpdateReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/update-report/update-report.component';
+import { DatafilterComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/datafilter/datafilter.component'
 import { Routes, CanActivate, RouterModule } from '@angular/router';
 import { AuthGuard } from './security/auth.guard'
 
@@ -44,6 +46,10 @@ const routes: Routes = [
       { path: 'delete_user', component: DeleteUserComponent }],
     canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ADMIN' }
   },
+  //invoice report
+  { path: 'invoice-reports', component: DatafilterComponent },
+  { path: 'update-report/:id', component: UpdateReportComponent },
+  
   // Inventory Manager Components
   { path: 'inventory_manager', component: InventoryManagerSelectionsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   { path: 'inventory_manager_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
@@ -62,20 +68,23 @@ const routes: Routes = [
   { path: 'invoice_report', component: InvoiceReportComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   // Inventory Manager - Distribution Components
   {
-    path: 'distribution_dashboard', component: DistributionDashboardComponent,
+    path: 'distribution_dashboard',
+    component: DistributionDashboardComponent,
     children: [
       { path: '', component: NewLoadingComponent },
       { path: 'reports', component: ReportsComponent },
-      { path: 'manage', component: ManageComponent }],
-    canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' }
+      { path: 'manage', component: ManageComponent },
+    ],
+    canActivate: [AuthGuard],
+    data: { expectedRole: 'ROLE_INVENTORY_MANAGER' },
   },
   // Analyzer Components
   { path: 'analyzer_dashboard', component: AnalyzerSelectionComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
   { path: 'reports', component: AnalyzerReportsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
   { path: 'analyzer_employee_details', component: EmployeeDetailsComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_ANALYZER' } },
-
+  
   // Auto Redirection for Unknown paths
-  { path: '**', redirectTo: '' }
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
