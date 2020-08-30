@@ -23,6 +23,9 @@ import { DeleteUserComponent } from './admin-dashboard/delete-user/delete-user.c
 import { StoreHouseDashboardComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-dashboard.component';
 import { StoreHouseNewStocksComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-new-stocks/store-house-new-stocks.component';
 import { StoreHouseReportsComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/store-house-reports.component';
+import { StoredItemsReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/stored-items-report/stored-items-report.component';
+import { SoldItemsReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/sold-items-report/sold-items-report.component';
+import { InvoiceReportComponent } from './inventory-manager-dashboard/store-house-dashboard/store-house-reports/invoice-report/invoice-report.component';
 
 
 const routes: Routes = [
@@ -53,6 +56,10 @@ const routes: Routes = [
       { path: 'store_house_reports', component: StoreHouseReportsComponent }],
     canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' }
   },
+  // Inventory Manager Store House Components
+  { path: 'stored_items_report', component: StoredItemsReportComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
+  { path: 'sold_items_report', component: SoldItemsReportComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
+  { path: 'invoice_report', component: InvoiceReportComponent, canActivate: [AuthGuard], data: { expectedRole: 'ROLE_INVENTORY_MANAGER' } },
   // Inventory Manager - Distribution Components
   {
     path: 'distribution_dashboard', component: DistributionDashboardComponent,
