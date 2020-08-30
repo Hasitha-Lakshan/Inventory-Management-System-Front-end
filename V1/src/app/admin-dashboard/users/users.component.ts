@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl,Validators, FormArray} from '@angular/forms';
-import{UpdateUserPaylord} from './updateUserPaylord';
-import {AdminserviceService} from '../../services/adminservice.service'
-import { Observable } from 'rxjs';
-import { PhoneNumber } from 'src/app/auth/signup/phone-number';
+import { FormGroup, FormBuilder, FormControl, Validators, FormArray } from '@angular/forms';
+import { AdminserviceService } from '../../services/adminservice.service'
+
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -11,30 +9,20 @@ import { PhoneNumber } from 'src/app/auth/signup/phone-number';
 })
 
 export class UsersComponent implements OnInit {
- 
- 
-  users:any
-  updateForm:FormGroup
- 
-  
 
- 
-  constructor( private adminserviceService:AdminserviceService,private fb:FormBuilder) {
-  
-    
-   
+  users: any
+  updateForm: FormGroup
+
+  constructor(private adminserviceService: AdminserviceService, private fb: FormBuilder) {
+
   }
 
   ngOnInit(): void {
-    this.adminserviceService.getAllUsers().subscribe(data=>{
-      this.users=data
-      console.log(this.users)
-    },error=>{
-
-    }
+    this.adminserviceService.getAllUsers().subscribe(data => {
+      this.users = data
+    }, error => { }
     )
 
-    
     this.updateForm = this.fb.group({
       firstName: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -45,9 +33,8 @@ export class UsersComponent implements OnInit {
       phoneNumbers: this.fb.array([this.phoneNumberObj()]),
       username: ['', [Validators.required, Validators.minLength(5)]],
     })
-    
-    
   }
+
   get phoneNumbers() {
     return this.updateForm.get('phoneNumbers') as FormArray;
   }
@@ -65,17 +52,12 @@ export class UsersComponent implements OnInit {
   deletePhoneNumber(i: number) {
     this.phoneNumbers.removeAt(i);
   }
-  onSubmit(){
-  
-      this.adminserviceService.updateUser(this.updateForm.value).subscribe(data=>{
+  onSubmit() {
 
-      },error=>{
+    this.adminserviceService.updateUser(this.updateForm.value).subscribe(data => {
 
-      })
-     
-   
+    }, error => {
 
-    
+    })
   }
-
 }
