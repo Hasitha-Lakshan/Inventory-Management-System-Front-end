@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl,Validators } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl,Validators, FormArray} from '@angular/forms';
 import{UpdateUserPaylord} from './updateUserPaylord';
-import {UserPaylord} from './usersPaylord';
 import {AdminserviceService} from '../../services/adminservice.service'
 import { Observable } from 'rxjs';
 import { PhoneNumber } from 'src/app/auth/signup/phone-number';
@@ -36,25 +35,44 @@ export class UsersComponent implements OnInit {
     )
 
     
-    this.updateForm=this.fb.group({
-      
-      firstname:[''],
-      lastname:[''],
-      role:[''],
-      addressline1:[''],
-      addressline2:[''],
-      addressline3:[''],
-      username:[''],
-      
-
-    });
+    this.updateForm = this.fb.group({
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
+      role: ['', [Validators.required]],
+      addressLine1: ['', [Validators.required]],
+      addressLine2: ['', [Validators.required]],
+      addressLine3: ['', [Validators.required]],
+      phoneNumbers: this.fb.array([this.phoneNumberObj()]),
+      username: ['', [Validators.required, Validators.minLength(5)]],
+    })
     
     
   }
+  get phoneNumbers() {
+    return this.updateForm.get('phoneNumbers') as FormArray;
+  }
+
+  phoneNumberObj() {
+    return this.fb.group({
+      phoneType: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required, Validators.pattern('[0][1-9][0-9]{8}')]],
+    });
+  }
+  addNewNumber() {
+    this.phoneNumbers.push(this.phoneNumberObj());
+  }
+
+  deletePhoneNumber(i: number) {
+    this.phoneNumbers.removeAt(i);
+  }
   onSubmit(){
   
+      this.adminserviceService.updateUser(this.updateForm.value).subscribe(data=>{
 
-      console.log("update method")
+      },error=>{
+
+      })
+     
    
 
     

@@ -1,4 +1,4 @@
-import {PhonePaylord} from "./phonePaylord"
+import {PhoneNumber} from "./phone-number"
 export class UserPaylord{
     userID:String;
     firstName:String;
@@ -7,7 +7,7 @@ export class UserPaylord{
     addressLine1:String;
     addressLine2:String;
     addressLine3:String;
-    phoneNumbers: PhonePaylord[];
+    phoneNumbers: PhoneNumber[];
 
     
 

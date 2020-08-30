@@ -6,8 +6,8 @@ import {UserPaylord} from '../admin-dashboard/users/usersPaylord'
 import { Observable } from 'rxjs';
 
 import{StatusPaylord} from '../admin-dashboard/update-user-status/statusPaylord'
-import { PhonePaylord } from '../admin-dashboard/users/phonePaylord';
-import { PhoneNumber } from '../auth/signup/phone-number';
+
+import { PhoneNumber } from '../admin-dashboard/users/phone-number';
 @Injectable({
   providedIn: 'root'
 })
@@ -18,19 +18,19 @@ export class AdminserviceService {
 
 updateUser(data){
  
- /* let updateUserPaylord=new UpdateUserPaylord();
-  updateUserPaylord.firstName=data.firstname;
-  updateUserPaylord.lastName=data.lastname;
+  let updateUserPaylord=new UpdateUserPaylord();
+  updateUserPaylord.firstName=data.firstName;
+  updateUserPaylord.lastName=data.lastName;
   updateUserPaylord.role=data.role;
-  updateUserPaylord.addressLine1=data.addressline1;
-  updateUserPaylord.addressLine2=data.addressline2;
-  updateUserPaylord.addressLine3=data.addressline3;
+  updateUserPaylord.addressLine1=data.addressLine1;
+  updateUserPaylord.addressLine2=data.addressLine2;
+  updateUserPaylord.addressLine3=data.addressLine3;
   updateUserPaylord.username=data.username;
-  updateUserPaylord.phoneNumbers=[]
+  updateUserPaylord.phoneNumbers=data.phoneNumbers
 
   console.log(updateUserPaylord)
   return this.httpclient.put("http://localhost:8080/api/admin/updateuser",updateUserPaylord)
-*/
+
   
 
 }
